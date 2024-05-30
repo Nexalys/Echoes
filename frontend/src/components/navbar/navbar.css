@@ -1,0 +1,27 @@
+.navbar {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 2%;
+    box-shadow: var(--main-shadow);
+    width: 95%;
+    align-self: center;
+    height: 100px;
+    position: relative;
+    top: 10px;
+    border-radius: 15px;
+}
+
+.navbar-first-half {
+    display: flex;
+    align-items: center;
+    gap: 10%;
+    margin-right: auto;
+}
+
+.navbar-second-half {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-width: 10%;
+}
+

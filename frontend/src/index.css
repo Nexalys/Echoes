@@ -40,6 +40,7 @@ h1, h2, h3, h4, h5 {
 
 .logo {
   font-family: 'Playfair Display';
+  font-weight: 600;
 }
 
 html {font-size: 100%;} /* 16px */
@@ -55,3 +56,19 @@ h4 {font-size: 1.777rem; /* 28.48px */}
 h5 {font-size: 1.333rem; /* 21.28px */}
 
 small {font-size: 0.750rem; /* 12px */}
+
+.logo-placeholder {
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+  border-radius: 100px;
+  box-shadow: var(--main-shadow);
+  border: solid var(--accent) 1px;
+  aspect-ratio: 1;
+}
+
+.navbar-logo-section {
+  display: flex;
+  align-items: center;
+  gap: 10%;
+}

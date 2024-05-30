@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: center;
     border-radius: 500px;
-    width: 520px; 
+    min-width: 520px; 
     height: 49px;
     border: solid var(--accent) 1px;
     border-radius: 500px;
@@ -19,7 +19,7 @@
     flex-direction: column;
     justify-content: center;
     border-radius: 500px;
-    width: 520px; 
+    min-width: 520px; 
     height: 49px;
     border-radius: 500px;
     padding: 10px;
@@ -32,17 +32,22 @@
     width: 100%;
     border-radius: 500px;
     border: solid var(--accent) 1px;
-    padding: 15px;
+    padding: 20px;
     box-sizing: border-box;
     font-size: 1rem;
     background-color: transparent;
     position: relative;
     transition: border 0.1s ease-in-out;
+    font-size: 1.1rem;
 }
 
 .input::placeholder {
     color: var(--accent);
     font-style: italic;
+}
+
+.input:focus::placeholder {
+    color: var(--primary);
 }
 
 .fieldname {
