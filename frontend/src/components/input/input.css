@@ -6,24 +6,43 @@
     border-radius: 500px;
     width: 520px; 
     height: 49px;
-    border: solid var(--accent) 0.5px;
+    border: solid var(--accent) 1px;
     border-radius: 500px;
     box-shadow: var(--main-shadow);
     padding: 10px;
     transition: border 0.1s ease-in-out;
 }
 
-.input-container input {
+.bare-input-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 500px;
+    width: 520px; 
+    height: 49px;
+    border-radius: 500px;
+    padding: 10px;
+    transition: border 0.1s ease-in-out;
+}
+
+
+.input {
     height: 100%;
     width: 100%;
     border-radius: 500px;
-    border: solid var(--accent) 0.5px;
+    border: solid var(--accent) 1px;
     padding: 15px;
     box-sizing: border-box;
     font-size: 1rem;
     background-color: transparent;
     position: relative;
     transition: border 0.1s ease-in-out;
+}
+
+.input::placeholder {
+    color: var(--accent);
+    font-style: italic;
 }
 
 .fieldname {
@@ -35,11 +54,15 @@
     left: 7%;
 }
 
-.input-container input:focus {
+.input:focus {
     border: solid var(--primary) 2.5px;
     outline: none;
 }
 
-.input-container:has(input:focus) {
+.input-container:has(.input:focus) {
     border-color: var(--primary);
+}
+
+.bare {
+    box-shadow: var(--main-shadow);
 }
