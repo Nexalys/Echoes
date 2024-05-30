@@ -1,0 +1,45 @@
+.input-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 500px;
+    width: 520px; 
+    height: 49px;
+    border: solid var(--accent) 0.5px;
+    border-radius: 500px;
+    box-shadow: var(--main-shadow);
+    padding: 10px;
+    transition: border 0.1s ease-in-out;
+}
+
+.input-container input {
+    height: 100%;
+    width: 100%;
+    border-radius: 500px;
+    border: solid var(--accent) 0.5px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    background-color: transparent;
+    position: relative;
+    transition: border 0.1s ease-in-out;
+}
+
+.fieldname {
+    position: absolute;
+    background-color: var(--background);
+    border-radius: 5px;
+    padding: 0 20px;
+    top: -17%;
+    left: 7%;
+}
+
+.input-container input:focus {
+    border: solid var(--primary) 2.5px;
+    outline: none;
+}
+
+.input-container:has(input:focus) {
+    border-color: var(--primary);
+}
