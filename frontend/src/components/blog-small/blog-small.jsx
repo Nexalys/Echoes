@@ -1,28 +1,28 @@
-import './blog.css';
+import './blog-small.css';
 
 
-export function Blog({username = "Username", date = "12th June 2024", url="https://i.pinimg.com/564x/74/5c/e7/745ce700e51c7112bce1213c2a61ddfa.jpg"}){
+export function Blogsmall({username = "Username", date = "12th June 2024", url="https://i.pinimg.com/564x/74/5c/e7/745ce700e51c7112bce1213c2a61ddfa.jpg"}){
 
     return(
-    <div className="Blog">
-        <div className="left-content">
+    <div className="Blog-s">
+        <div className="left-content-s">
             <h4>Blog Title</h4>
             <hr />
-            <div className="blog-content">
+            <div className="blog-content-s">
                 <p>This is like a small portion of the blog. A trailer if you will. This is like a small portion of the blog. A trailer if you will.This is like a small portion of the blog. A trailer if you will. This is like a small portion of the blog. A trailer if you will.This is like a small portion of the blog. A trailer if you will. This is like a small portion of the blog. A trailer if you will.This is like a small portion of the blog. 
                    A trailer if you will. This is like a small portion of the blog. A trailer if you will.This is like a small portion of the blog. A trailer if you will. This is like a small portion of the blog. A trailer if you will.</p>
             </div>
-            <div className="footer">
-                <div className="profile-pic">
+            <div className="footer-s">
+                <div className="profile-pic-s">
                     <img src={url}/>
                 </div>
-                <div className="author">
+                <div className="author-s">
                     <p>{username} ▪️</p>
                 </div>
-                <div className="publishing-date">{date}</div>
+                <div className="publishing-date-s">{date}</div>
 
 
-                <div className='pinned hidden' >
+                <div className='pinned-s hidden' >
                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g id="tabler:pinned-filled">
                                 <path id="Vector" d="M14.6667 2.75C14.9003 2.75026 15.125 2.83972 15.2949 3.00011C15.4648 3.1605 15.567 3.37971 15.5807 3.61295C15.5944 3.84618 15.5185 4.07585 15.3686 4.25501C15.2186 4.43418 15.0059 4.54932 14.7739 4.57692L14.6667 4.58333V8.95033L16.4028 12.4236C16.4508 12.5186 16.4818 12.6213 16.4945 12.727L16.5 12.8333V14.6667C16.5 14.8912 16.4175 15.1079 16.2683 15.2757C16.1191 15.4435 15.9136 15.5506 15.6906 15.5769L15.5833 15.5833H11.9167V19.25C11.9164 19.4836 11.8269 19.7084 11.6666 19.8783C11.5062 20.0481 11.287 20.1504 11.0537 20.1641C10.8205 20.1778 10.5908 20.1019 10.4117 19.9519C10.2325 19.802 10.1173 19.5893 10.0898 19.3573L10.0833 19.25V15.5833H6.41667C6.19214 15.5833 5.97544 15.5009 5.80766 15.3517C5.63988 15.2025 5.53269 14.9969 5.50642 14.7739L5.5 14.6667V12.8333C5.50013 12.727 5.51874 12.6216 5.555 12.5217L5.59717 12.4236L7.33333 8.9485V4.58333C7.09969 4.58307 6.87497 4.49361 6.70508 4.33322C6.53519 4.17283 6.43295 3.95363 6.41926 3.72039C6.40557 3.48715 6.48145 3.25749 6.63141 3.07832C6.78137 2.89915 6.99408 2.78401 7.22608 2.75642L7.33333 2.75H14.6667Z" fill="#F64C46"/>
@@ -30,7 +30,7 @@ export function Blog({username = "Username", date = "12th June 2024", url="https
                         </svg><p>Pinned</p>
                 </div>
 
-                <div className='not-pinned'>
+                <div className='not-pinned-s '>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9 4V10L7 14V16H17V14L15 10V4M12 16V21M8 4H16" stroke="#F64C46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -38,17 +38,17 @@ export function Blog({username = "Username", date = "12th June 2024", url="https
                 </div>
             </div> 
         </div>  
-        <div className="right-content">
-            <div className="blog-icon-pic">
-                <div className="inner-circle">
+        <div className="right-content-s">
+            <div className="blog-icon-pic-s">
+                <div className="inner-circle-s">
                     <img src={url}/>
                 </div>
             </div>
-            <div className="bottom-box">
-                <div className="subject">Subject</div>
+            <div className="bottom-box-s">
+                <div className="subject-s">Subject</div>
 
-                <div className="bookmark hidden">
-                    <div className="remove">
+                <div className="bookmark-s hidden">
+                    <div className="remove-s">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g id="gg:remove">
                                 <g id="Group">
@@ -58,7 +58,7 @@ export function Blog({username = "Username", date = "12th June 2024", url="https
                             </g>
                         </svg>
                     </div>
-                    <div className="saved">
+                    <div className="saved-s">
                         
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M5 21V5C5 4.45 5.196 3.97933 5.588 3.588C5.98 3.19667 6.45067 3.00067 7 3H17C17.55 3 18.021 3.196 18.413 3.588C18.805 3.98 19.0007 4.45067 19 5V21L12 18L5 21Z" fill="#F64C46"/>
@@ -68,7 +68,7 @@ export function Blog({username = "Username", date = "12th June 2024", url="https
                 </div>
                 
 
-                <div className="not-saved ">
+                <div className="not-saved-s ">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="material-symbols:bookmark-outline">
                             <path id="Vector" d="M3 23V3.44444C3 2.77222 3.238 2.19696 3.714 1.71867C4.19 1.24037 4.76152 1.00081 5.42857 1H17.5714C18.2393 1 18.8112 1.23956 19.2872 1.71867C19.7632 2.19778 20.0008 2.77304 20 3.44444V23L11.5 19.3333L3 23ZM5.42857 19.2722L11.5 16.6444L17.5714 19.2722V3.44444H5.42857V19.2722Z" fill="#F64C46"/>
@@ -83,4 +83,4 @@ export function Blog({username = "Username", date = "12th June 2024", url="https
     )
 }
 
-export default Blog;
+export default Blogsmall;

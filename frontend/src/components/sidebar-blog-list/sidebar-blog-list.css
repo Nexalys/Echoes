@@ -1,0 +1,48 @@
+
+.user{
+    display:flex;
+    height:1.5rem;
+    width:12.75rem;
+    align-items: center;
+    justify-content:space-between;
+ 
+}
+
+.user .profile-pic{
+    height:1.5rem;
+    width:1.5rem;
+    border-radius: 50%;
+}
+
+.user .profile-pic img{
+    height:1.5rem;
+    width:1.5rem;
+    border-radius: 50%;
+    box-shadow: var(--main-shadow);
+}
+
+.publishing-date{
+    margin-left:-0.5rem;
+    
+}
+
+.author{
+    margin-left: 0;
+}
+
+.sidebar-blog{
+    display:flex;
+    flex-direction: column;
+    height:4rem;
+    width:15rem;
+    justify-content: center;
+    background-color: var(--background);
+    color: var(--text);
+}
+
+.sidebar-blog h4{
+    margin:0;
+    margin-top:5px;
+}
+
+

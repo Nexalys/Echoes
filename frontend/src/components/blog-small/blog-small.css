@@ -1,7 +1,7 @@
-.Blog{
+.Blog-s{
     display:flex;
     width: max-content;
-    height: 14rem;
+    height: 13rem;
     margin: 0.5rem;
     border-radius: 15px;
     align-items: center;
@@ -11,20 +11,20 @@
     color:var(--text) ;
 }
 
-.left-content{
-    width: 38vw;
-    height: 14rem;
+.left-content-s{
+    width: 25vw;
+    height: 12rem;
     margin: 1rem;
     
     border-radius: 15px; 
 }
 
-.left-content h4{
+.left-content-s h4{
     margin: 1rem;
    
 }
 
-.left-content hr{
+.left-content-s hr{
    margin-left: 1rem;
    border: none; 
    height:1px;
@@ -33,10 +33,10 @@
 
 
 
-.blog-content{
+.blog-content-s{
     margin-left: 1rem;
-    width: 38vw;
-    height: 5.5rem;
+    width: 25vw;
+    height: 4rem;
     overflow: hidden;
     background: linear-gradient(to bottom,var(--text), rgba(187, 8, 8, 0));
 
@@ -45,15 +45,15 @@
     -webkit-text-fill-color: transparent;
 }
 
-.blog-content p{
+.blog-content-s p{
     overflow: hidden;
    
 }
 
-.footer{
+.footer-s{
     display:flex;
     height:1.5rem;
-    width:18.25rem;
+    width:17.5rem;
     align-items: center;
     justify-content:space-between;
     margin-left: 1rem;
@@ -62,36 +62,39 @@
     
 }
 
-.footer .profile-pic{
+.footer-s .profile-pic-s{
     height:1.5rem;
     width:1.5rem;
     border-radius: 50%;
     
 }
 
-.footer .profile-pic img{
+.footer-s .profile-pic-s img{
     height:1.5rem;
     width:1.5rem;
     border-radius: 50%;
-    
+   
     
 }
 
-.publishing-date{ 
-    margin-left:-0.6rem;
+.author-s{
+    margin-left:0.5rem;
+}
+
+.publishing-date-s{ 
+    margin-left:0.2rem;
 } 
 
-.pinned{
+.pinned-s{
     height:1.5rem;
     width:4.5rem;
     display: flex;
     align-items:center; 
     justify-content: center;
     color:var(--accent);
-    
 }
 
-.not-pinned{
+.not-pinned-s{
     height:1.5rem;
     width:4.5rem;
     display: flex;
@@ -100,7 +103,7 @@
     
 }
 
-.right-content{
+.right-content-s{
     display:flex;
     flex-direction: column;
     width: 20vh;
@@ -111,10 +114,10 @@
     
 }
 
-.blog-icon-pic{
+.blog-icon-pic-s{
     display: flex;
-    height:6.8rem;
-    width:6.8rem;
+    height:6.5rem;
+    width:6.5rem;
     margin-top: 0.6rem;
     margin-right:auto;
     margin-left: auto;
@@ -122,25 +125,26 @@
     border:solid var(--accent) 0.2rem;
     justify-content: center;
     align-items: center;
+    box-shadow: var(--main-shadow);
 }
 
-.inner-circle{
-    height:6.3rem;
-    width:6.3rem;
+.inner-circle-s{
+    height:6rem;
+    width:6rem;
     border-radius: 50%;
     
 }
 
 
-.inner-circle img{
-    height:6.3rem;
-    width:6.3rem;
+.inner-circle-s img{
+    height:6rem;
+    width:6rem;
     border-radius: 50%;
 }
 
-.bottom-box{
+.bottom-box-s{
     display: flex;
-    margin-top:1.8rem;
+    margin-top:1.3rem;
     height:2rem;
     width:max-content;
     align-items: center;
@@ -148,7 +152,7 @@
 }
 
 
-.subject{
+.subject-s{
     height:1.25rem;
     width:3rem;
     text-align: center;
@@ -162,7 +166,7 @@
     padding-right: 0.5vw;
 }
 
-.remove{
+.remove-s{
     height:1.5rem;
     width:2rem;
     margin-left:1vh;
@@ -172,13 +176,13 @@
     justify-content: center;
 }
 
-.remove svg {
+.remove-s svg {
 
     width: 1.4rem;
     height: 1.4rem;
   }
 
-.saved{
+.saved-s{
     height:1.5rem;
     width:2rem;
     display: flex;
@@ -188,7 +192,7 @@
 
 
 
-.not-saved{
+.not-saved-s{
     height:1.5rem;
     width:2rem;
     display: flex;
@@ -198,12 +202,12 @@
     cursor: pointer;
 }
 
-.not-saved svg{
+.not-saved-s svg{
     width: 1.4rem;
     height: 1.4rem;
 }
 
-.bookmark{
+.bookmark-s{
     display:flex;
 }
 
@@ -211,36 +215,36 @@
 
 
 
-.blog-icon-pic:hover {
+.blog-icon-pic-s:hover {
     cursor: pointer;
 }
 
-.author p:hover{
+.author-s p:hover{
     cursor: pointer;
 }
 
 
-.remove svg:hover{
+.remove-s svg:hover{
     scale:1.2;
     cursor:pointer;
 }
 
-.saved svg:hover{
+.saved-s svg:hover{
     scale:1.2;
     cursor:pointer;
 }
 
-.subject:hover{
+.subject-s:hover{
     scale:1.2;
     cursor:pointer;
 }
 
-.left-content h4:hover{
+.left-content-s h4:hover{
     cursor:pointer;
     color:var(--primary);
 }
 
-.pinned{
+.pinned-s{
     cursor:pointer;
 }
 
