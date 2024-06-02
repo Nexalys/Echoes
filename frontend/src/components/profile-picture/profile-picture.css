@@ -2,16 +2,21 @@
     display: flex;
     aspect-ratio: 1;
     overflow: hidden;
+    object-fit: cover;
+    border-radius: 500px;
+    box-shadow: var(--main-shadow);
 }
 
 .small-pfp img {
     max-height: 50px;
     width: 50px;
-    object-fit: cover;
-    border-radius: 100px;
-    box-shadow: var(--main-shadow);
 }
 
 .profile-picture-container img:hover {
     cursor: pointer;
+}
+
+.really-small-pfp img {
+    max-height: 30px;
+    width: 30px;
 }
