@@ -72,3 +72,9 @@ small {font-size: 0.750rem; /* 12px */}
   align-items: center;
   gap: 10%;
 }
+
+.blog .left-content hr{
+  margin-left: 1rem;
+  height:2px;
+  color: var(--accent);
+}
