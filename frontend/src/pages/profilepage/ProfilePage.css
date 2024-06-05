@@ -1,0 +1,181 @@
+.profilepage-container {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    padding: 0px 50px;
+    box-sizing: border-box;
+    gap: 4vw;
+    margin-top: 50px;
+    width: 100vw;
+
+}
+
+.profilepage-left-sidebar {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 20px;
+    border-radius: 15px;
+    background: var(--background);
+    box-shadow: var(--floating-shadow);
+    width: 6vw;
+    height: fit-content;
+}
+
+.profilepage-left-images {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    gap: 5vh;
+    margin-top: 20px;
+    margin-bottom: 40vh;
+}
+
+.profilepage-left-images img:hover {
+    cursor: pointer;
+}
+
+.profilepage-main {
+    min-height: 982px;
+    width: 55vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: var(--floating-shadow);
+    border-radius: 15px;
+padding: 20px;
+}
+
+.profilepage-main-picture {
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    fill: lightgray 50% / cover no-repeat;
+    box-shadow: var(--floating-shadow);
+    padding: 0px;
+    box-sizing: border-box;
+    margin-top: 0px;
+}
+
+.profilepage-main-heading {
+    display: flex;
+    flex-direction: row;
+    justify-items: flex-start;
+    align-items: center;
+    padding: 20px;
+    width: 90%;
+}
+
+.profilepage-main-heading h1 {
+    margin: 0px;
+    margin-right: auto;
+    color: var(--text);
+}
+
+.profilepage-main-heading h4 {
+    color: var(--text);
+}
+
+.profilepage-right-sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    padding: 20px;
+    width: 357px;
+    height: 828px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: var(--background);
+    box-shadow: var(--floating-shadow);
+    height: fit-content;
+}
+
+.profilepage-right-image-container {
+    width: 194px;
+    height: 194px;
+    flex-shrink: 0;
+    box-shadow: var(--floating-shadow);
+    border-radius: 194px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    /* padding: 10px; */
+}
+
+.profilepage-right-image {
+    width: 194px;
+    height: 194px;
+    box-shadow: var(--floating-shadow);
+    border-radius: 194px;
+}
+
+.profilepage-right-sidebar h3 {
+    color: var(--text);
+    font-family: Poppins;
+    font-size: 37.96px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0px;
+    margin-top: 25px;
+}
+
+.profilepage-right-sidebar h4 {
+    color: var(--accent);
+    font-family: Poppins;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin: 0px;
+    margin-top: 10px;
+}
+
+.profilepage-right-sidebar p {
+    color: var(--text);
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    width: 293px;
+    height: fit-content;
+    flex-shrink: 0;
+}
+
+.profilepage-right-following {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1vh;
+}
+
+.profilepage-right-following h3 {
+    color: var(--text);
+    font-family: Poppins;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.profilepage-right-following a {
+    color: var(--text);
+    text-decoration: none;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
