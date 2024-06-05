@@ -36,6 +36,9 @@
     color: var(--text);
     margin-bottom: 4px;
 }
+.profile-details-text-container h2:hover{
+    color: var(--primary);
+}
 
 .profile-details-text-container p {
     margin: 0px;

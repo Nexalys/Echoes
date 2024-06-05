@@ -15,7 +15,9 @@
     min-height: 53px;
     cursor: pointer;
 }
-
+.big-button-container button:hover{
+    color: var(--primary);
+}
 .big-button-container {
     padding: 20px;
     width: fit-content;
@@ -43,4 +45,7 @@
 .small-button-container {
     padding: 20px;
     width: fit-content;
+}
+.small-button-container button:hover{
+    color: var(--primary);
 }
