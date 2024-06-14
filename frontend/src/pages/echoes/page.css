@@ -28,10 +28,10 @@
     flex-direction: column;
     padding-top: 2%;
     box-sizing: border-box;
-    align-items: center;
     gap: 4%;
-}
-
-.blog-categories {
-
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 2%;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }

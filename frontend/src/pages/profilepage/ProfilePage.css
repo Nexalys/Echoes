@@ -1,7 +1,6 @@
 .profilepage-container {
     display: flex;
     flex-direction: row;
-    /* justify-items: center; */
     justify-content: space-between;
     padding: 0px 3vw;
     box-sizing: border-box;
@@ -25,7 +24,6 @@
     width: 6vw;
     height: 100vh;
     min-width: 100px;
-    /* height: fit-content; */
 }
 
 .profilepage-left-images {
@@ -36,7 +34,6 @@
     align-items: center;
     gap: 5vh;
     margin-top: 2vh;
-    /* margin-bottom: 600%; */
 }
 
 
@@ -92,7 +89,6 @@
 .profilepage-right-sidebar {
     display: flex;
     flex-direction: column;
-    /* justify-content:space-between; */
     align-items: center;
     padding: 20px;
     width: 20vw;
@@ -101,7 +97,8 @@
     border-radius: 15px;
     background: var(--background);
     box-shadow: var(--floating-shadow);
-    /* height: fit-content; */
+    overflow: scroll;
+    scrollbar-width: none;
 }
 
 .profilepage-right-image-container {
@@ -112,7 +109,6 @@
     justify-content: center;
     align-items: center;
     margin-top: 8vh;
-    /* padding: 10px; */
 }
 
 .profilepage-right-image {

@@ -1,24 +1,8 @@
-<<<<<<< HEAD
-import homevector from '../../../public/assets/homevector.svg'
-import notificationvecctor from '../../../public/assets/notificationvecctor.svg'
-import bookmarkvector from '../../../public/assets/bookmarkvector.svg'
-import createvector from '../../../public/assets/createvector.svg'
-import blogvector from '../../../public/assets/blogvector.svg'
-import profilepagemain from '../../../public/assets/profilepagemain.jpeg'
-
-import './ProfilePage.css'
-=======
-import React from 'react'
->>>>>>> 994b838982ec345af96bf1d3adf78a45a6cebf5b
-
 import  { Navbar }  from '../../components/navbar/navbar'
 import { Blog } from '../../components/blog/blog'
 import { ProfilePicture } from '../../components/profile-picture/profile-picture'
 import { BlogDescription } from '../../components/blog-description/BlogDescription'
 
-<<<<<<< HEAD
-export function ProfilePage({fullname = "Full Name" , url="https://i.pinimg.com/564x/74/5c/e7/745ce700e51c7112bce1213c2a61ddfa.jpg", username="username", followers ="11.1k", description="Tech enthusiast exploring the human side of innovation. Writing about the intersection of technology, culture, and society. Let's navigate this digital journey together."}) {
-=======
 import homevector from '../../../public/assets/homevector.svg'
 import notificationvecctor from '../../../public/assets/notificationvecctor.svg'
 import bookmarkvector from '../../../public/assets/bookmarkvector.svg'
@@ -29,7 +13,7 @@ import profilepagemain from '../../../public/assets/profilepagemain.jpeg'
 import './ProfilePage.css'
 
 export function ProfilePage({fullname = "Full Name" , url="https://i.pinimg.com/564x/74/5c/e7/745ce700e51c7112bce1213c2a61ddfa.jpg", username="username", followers ="11.1k", description="Tech enthusiast exploring the human side of innovation. Writing about the intersection of technology, culture, and society. Let's navigate this digital journey together."}){
->>>>>>> 994b838982ec345af96bf1d3adf78a45a6cebf5b
+
   return (
     <div>
         <Navbar/>
