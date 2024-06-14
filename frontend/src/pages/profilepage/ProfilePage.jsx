@@ -1,16 +1,19 @@
 import React from 'react'
+
 import  { Navbar }  from '../../components/navbar/navbar'
-import homevector from '../../assets/homevector.svg'
-import notificationvecctor from '../../assets/notificationvecctor.svg'
-import bookmarkvector from '../../assets/bookmarkvector.svg'
-import createvector from '../../assets/createvector.svg'
-import blogvector from '../../assets/blogvector.svg'
-import profilepagemain from '../../assets/profilepagemain.jpeg'
-import './ProfilePage.css'
 import { Blog } from '../../components/blog/blog'
-import { BlogFeature } from '../../components/blog-card/blog-card'
 import { ProfilePicture } from '../../components/profile-picture/profile-picture'
 import { BlogDescription } from '../../components/blog-description/BlogDescription'
+
+import homevector from '../../../public/assets/homevector.svg'
+import notificationvecctor from '../../../public/assets/notificationvecctor.svg'
+import bookmarkvector from '../../../public/assets/bookmarkvector.svg'
+import createvector from '../../../public/assets/createvector.svg'
+import blogvector from '../../../public/assets/blogvector.svg'
+import profilepagemain from '../../../public/assets/profilepagemain.jpeg'
+
+import './ProfilePage.css'
+
 export function ProfilePage({fullname = "Full Name" , url="https://i.pinimg.com/564x/74/5c/e7/745ce700e51c7112bce1213c2a61ddfa.jpg", username="username", followers ="11.1k", description="Tech enthusiast exploring the human side of innovation. Writing about the intersection of technology, culture, and society. Let's navigate this digital journey together."}){
   return (
     <div>
@@ -24,7 +27,7 @@ export function ProfilePage({fullname = "Full Name" , url="https://i.pinimg.com/
                 <img src={bookmarkvector} alt="" />
                 <img src={createvector} alt="" />
               </div>
-                <ProfilePicture/>
+                <ProfilePicture className="profilepage-left-picture"/>
             </div>
 
 
@@ -42,6 +45,7 @@ export function ProfilePage({fullname = "Full Name" , url="https://i.pinimg.com/
             <div className="profilepage-right-image-container">
               <img src='https://i.pinimg.com/564x/74/5c/e7/745ce700e51c7112bce1213c2a61ddfa.jpg' className="profilepage-right-image"/>
             </div>
+            <div className='profilepage-right-content'>
               <h3>{username}</h3>
               <h4>{followers} Followers</h4>
               <p>{description}</p>
@@ -52,6 +56,7 @@ export function ProfilePage({fullname = "Full Name" , url="https://i.pinimg.com/
                 <BlogDescription/>
                 <BlogDescription/>
                 <a href="">see all (456)</a>
+            </div>
               </div>
             </div>
 

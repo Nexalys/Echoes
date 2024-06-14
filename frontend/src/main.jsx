@@ -1,13 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { Homepage } from './pages/echoes/page'
+import {Home} from "./pages/home/Home"
+import { ProfilePage } from './pages/profilepage/ProfilePage'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Homepage />
+    element: <ProfilePage />
   }, 
   {
     path: '/sign-up',
