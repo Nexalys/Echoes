@@ -1,17 +1,19 @@
-import React from 'react'
-import  { Navbar }  from '../../components/navbar/navbar'
-import homevector from '../../assets/homevector.svg'
-import notificationvecctor from '../../assets/notificationvecctor.svg'
-import bookmarkvector from '../../assets/bookmarkvector.svg'
-import createvector from '../../assets/createvector.svg'
-import blogvector from '../../assets/blogvector.svg'
-import profilepagemain from '../../assets/profilepagemain.jpeg'
+import homevector from '../../../public/assets/homevector.svg'
+import notificationvecctor from '../../../public/assets/notificationvecctor.svg'
+import bookmarkvector from '../../../public/assets/bookmarkvector.svg'
+import createvector from '../../../public/assets/createvector.svg'
+import blogvector from '../../../public/assets/blogvector.svg'
+import profilepagemain from '../../../public/assets/profilepagemain.jpeg'
+
 import './ProfilePage.css'
+
+import  { Navbar }  from '../../components/navbar/navbar'
 import { Blog } from '../../components/blog/blog'
 import { BlogFeature } from '../../components/blog-card/blog-card'
 import { ProfilePicture } from '../../components/profile-picture/profile-picture'
 import { BlogDescription } from '../../components/blog-description/BlogDescription'
-export function ProfilePage({fullname = "Full Name" , url="https://i.pinimg.com/564x/74/5c/e7/745ce700e51c7112bce1213c2a61ddfa.jpg", username="username", followers ="11.1k", description="Tech enthusiast exploring the human side of innovation. Writing about the intersection of technology, culture, and society. Let's navigate this digital journey together."}){
+
+export function ProfilePage({fullname = "Full Name" , url="https://i.pinimg.com/564x/74/5c/e7/745ce700e51c7112bce1213c2a61ddfa.jpg", username="username", followers ="11.1k", description="Tech enthusiast exploring the human side of innovation. Writing about the intersection of technology, culture, and society. Let's navigate this digital journey together."}) {
   return (
     <div>
         <Navbar/>
@@ -54,8 +56,6 @@ export function ProfilePage({fullname = "Full Name" , url="https://i.pinimg.com/
                 <a href="">see all (456)</a>
               </div>
             </div>
-
-
         </div>
     </div>
   )

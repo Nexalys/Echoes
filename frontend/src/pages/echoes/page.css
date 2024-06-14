@@ -1,5 +1,37 @@
 .homepage-container {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.homepage-blogs {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2vw;
+}
+
+.homepage-featured {
+    width: 27vw;
+    height: 100vh;
+    box-shadow: var(--main-shadow);
+    border-radius: 15px;
+}
+
+.homepage-main {
+    width: 67vw;
+    height: 100vh;
+    box-shadow: var(--main-shadow);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 2%;
+    box-sizing: border-box;
+    align-items: center;
+    gap: 4%;
+}
+
+.blog-categories {
+
 }

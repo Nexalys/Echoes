@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root[data-theme="light"] {
   --text: #020A27;
   --background: #DAE1E4;
@@ -29,12 +31,14 @@
 }
 
 body {
-  font-family: 'Avenir';
+  font-family: 'Montserrat';
   font-weight: 400;
+  box-sizing: border-box;
+  overflow: overlay;
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: 'Avenir';
+  font-family: 'Montserrat';
   font-weight: 700;
 }
 

@@ -2,6 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { Homepage } from './pages/echoes/page'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { MarkdownEditor } from './pages/markdown-page/markdown-page';
+import { ProfilePage } from './pages/profilepage/ProfilePage';
 import './index.css'
 
 const router = createBrowserRouter([
@@ -12,6 +14,14 @@ const router = createBrowserRouter([
   {
     path: '/sign-up',
     element: <Homepage />, 
+  }, 
+  {
+    path: '/markdown',
+    element: <MarkdownEditor />
+  }, 
+  {
+    path: '/profile',
+    element: <ProfilePage />
   }
 ]);
  
