@@ -4,13 +4,14 @@
     justify-content: space-between;
     padding: 0px 3vw;
     box-sizing: border-box;
-    gap: 2rem;
+    gap: 0rem;
     margin-top: 6vh;
     width: 100vw;
 
 }
 
 .profilepage-left-sidebar {
+    position:sticky;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -43,55 +44,81 @@
 
 .profilepage-main {
     /* min-height: 100vh; */
-    width: 60vw;
+    width: 55vw;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    height: 100vh;
     /* box-shadow: var(--floating-shadow); */
     border-radius: 15px;
+    overflow: scroll;
+    scrollbar-width: none;
     /* padding: 20px; */
 }
 
 .profilepage-main-picture {
+
+    border-radius: 15px;
+    width: 95%;
+    max-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1;
+    /* padding: 20px; */
+    /* border: 2px solid red; */
+    box-shadow: var(--floating-shadow);
+}
+
+.profilepage-main-picture img {
+    overflow: hidden;
+    aspect-ratio: 1;
+    border-radius: 15px;
     height: 100%;
     width: 100%;
-    border-radius: 15px;
-    background-repeat: no-repeat;
-    background-size:cover;
-    fill: lightgray 50% / cover no-repeat;
-    box-shadow: var(--floating-shadow);
-    padding: 0px;
-    box-sizing: border-box;
-    margin-top: 0px;
+    object-position: 50% 50%;
+    object-fit: cover;
+    margin-bottom: auto;
+    /* overflow: visible; */
 }
 
 .profilepage-main-heading {
     display: flex;
     flex-direction: row;
-    justify-items: flex-start;
+    justify-content: flex-start;
     align-items: center;
-    padding: 20px;
-    width: 90%;
+    /* padding: 20px; */
+    width: 95%;
+    align-self: flex-start;
+    margin: 0px;
+    margin-left: 2.5%;
 }
 
-.profilepage-main-heading h1 {
+.profilepage-main-heading h2 {
     margin: 0px;
     margin-right: auto;
     color: var(--text);
-    font-size: 4rem;
+    /* font-size: 4rem; */
 }
 
 .profilepage-main-heading h4 {
     color: var(--text);
 }
-
+.profilepage-main-blog-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+}
 .profilepage-right-sidebar {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    width: 20vw;
+    width: 24vw;
     height: 100vh;
     flex-shrink: 0;
     border-radius: 15px;
@@ -112,8 +139,8 @@
 }
 
 .profilepage-right-image {
-    max-height: 164px;
-    width: 164px;
+    max-height: 194px;
+    width: 194px;
     box-shadow: var(--floating-shadow);
     border-radius: 100%;
     aspect-ratio: 1;
@@ -121,38 +148,39 @@
 
 .profilepage-right-sidebar h3 {
     color: var(--text);
-    font-family: Poppins;
-    font-size: 2.9rem;
-    font-style: normal;
+    /* font-family: Poppins; */
+    /* font-size: 2.9rem; */
+    /* font-style: normal;
     font-weight: 700;
-    line-height: normal;
+    line-height: normal; */
     margin: 0px;
     margin-top: 3vh;
 }
 
 .profilepage-right-sidebar h4 {
     color: var(--accent);
-    font-family: Poppins;
+    /* font-family: Poppins; */
     font-size: 1.613rem;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
+    /* font-style: normal; */
+    font-weight: 400;
+    /* line-height: normal; */
     margin: 0px;
     margin-top: 1vh;
 }
 
 .profilepage-right-sidebar p {
     color: var(--text);
-    font-family: Poppins;
+    /* font-family: Poppins; */
     font-size: 1.18rem;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
+    /* font-style: normal; */
+    /* font-weight: 300; */
+    /* line-height: normal; */
     width: 17vw;
     height: fit-content;
     flex-shrink: 0;
 }
-.profilepage-right-content{
+
+.profilepage-right-content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -162,27 +190,35 @@
 .profilepage-right-following {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-self: flex-start;
+    justify-content: flex-start;
     align-items: flex-start;
-    gap: 0.3vh;
+    gap: 0vh;
     margin-top: auto;
+    margin-top: 30px;
 }
 
-.profilepage-right-following h3 {
+.profilepage-right-following h5 {
     color: var(--text);
-    font-family: Poppins;
-    font-size: 1.7rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
+    margin: 0px;
+
+    /* font-family: Poppins; */
+    /* font-size: 1.7rem; */
+    /* font-style: normal; */
+    /* font-weight: 700; */
+    /* line-height: normal; */
 }
 
 .profilepage-right-following a {
     color: var(--text);
     text-decoration: none;
-    font-family: Poppins;
+    /* font-family: Poppins; */
     font-size: 1rem;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
+    /* font-style: normal; */
+    /* font-weight: 300; */
+    /* line-height: normal; */
+}
+
+.profilepage-right-authordetails{
+    margin: 10px 0px;
 }

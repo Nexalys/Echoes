@@ -2,6 +2,7 @@ import  { Navbar }  from '../../components/navbar/navbar'
 import { Blog } from '../../components/blog/blog'
 import { ProfilePicture } from '../../components/profile-picture/profile-picture'
 import { BlogDescription } from '../../components/blog-description/BlogDescription'
+import { AuthorDetails } from '../../components/author-details/author-details'
 
 import homevector from '../../../public/assets/homevector.svg'
 import notificationvecctor from '../../../public/assets/notificationvecctor.svg'
@@ -31,12 +32,16 @@ export function ProfilePage({fullname = "Full Name" , url="https://i.pinimg.com/
 
 
             <div className='profilepage-main'>
-              <div className='profilepage-main-picture' style={{ backgroundImage: `url(${profilepagemain})` }}></div>
+              <div className='profilepage-main-picture' >
+                <img src={profilepagemain} alt="" />
+              </div>
               <div className='profilepage-main-heading'>
-                <h1>{fullname}</h1>
+                <h2>{fullname}</h2>
                 <h4>▪️▪️▪️</h4>
               </div>
-              <Blog/>
+              <div className='profilepage-main-blog-container'>
+                <Blog/>                          
+              </div>
             </div>
 
 
@@ -49,11 +54,13 @@ export function ProfilePage({fullname = "Full Name" , url="https://i.pinimg.com/
               <h4>{followers} Followers</h4>
               <p>{description}</p>
               <div className='profilepage-right-following'>
-                <h3>Following</h3>
-                <BlogDescription/>
-                <BlogDescription/>
-                <BlogDescription/>
-                <BlogDescription/>
+                <h5>Following</h5>
+                <div className='profilepage-right-authordetails'>
+                  <AuthorDetails/>
+                  <AuthorDetails/>
+                  <AuthorDetails/>
+                  <AuthorDetails/>
+                </div>
                 <a href="">see all (456)</a>
             </div>
               </div>
