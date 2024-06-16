@@ -1,16 +1,16 @@
-.blog-seeker{
+.blog-seeker {
     margin-top: 4vh;
     height: 3px;
     width: 98%;
     background-color: gray;
 }
 
-.blog-seeker-marker{
+.blog-seeker-marker {
     height: 3px;
     background-color: var(--accent);
 }
 
-.blog-content-container{
+.blog-content-container {
     width: 98%;
     background-color: var(--background);
     box-shadow: var(--floating-shadow);
@@ -22,8 +22,8 @@
     justify-content: space-between;
 }
 
-.blog-content{
-    margin: 28px 28px 28px 28px ;
+.blog-content {
+    margin: 28px;
     width: 70%;
     min-height: 46.5vmin;
     background-color: var(--background);
@@ -33,12 +33,12 @@
     padding: 3vw;
 }
 
-.blog-right-side{
-    margin: 28px 28px 28px 28px ;
+.blog-right-side {
+    margin: 28px;
     width: 20%;
 }
 
-.blog-right-sidebar{
+.blog-right-sidebar {
     width: 80%;
     background-color: var(--background);
     box-shadow: var(--floating-shadow);
@@ -46,101 +46,93 @@
     border-radius: 15px;
 }
 
-li{
+li {
     list-style: none;
     font-size: 16px;
 }
 
-.icon{
-    height:1.5rem;
-    width:4.5rem;
+.icon {
+    height: 1.5rem;
+    width: 4.5rem;
     font-size: 37px;
     color: var(--accent);
 }
 
-.eye{
+.eye {
     font-size: 40px;
 }
 
-.title-container{
+.title-container {
     display: flex;
     justify-content: space-between;
 }
 
-.icons{
+.icons {
     display: flex;
     gap: 1px;
     align-items: center;
 }
 
-h1{
-    margin: 0 0 0 0;
+h1 {
+    margin: 0;
 }
 
-hr{
+hr {
     margin-top: 1vh;
     margin-bottom: 1vh;
-    height: 0px;
+    height: 0;
     width: 86%;
-    margin-left: 0;
     background-color: #020A27;
     border: none;
-    box-shadow: none;
     border: 1px solid #020A27;
-    align-self: self-start;
+    align-self: flex-start;
 }
 
-.profile-pic{
+.profile-pic {
     display: flex;
-    margin: 15px 0 15px 0;
+    margin: 15px 0;
 }
 
-.profile-pic div{
+.profile-pic div {
     margin-left: 10px;
 }
 
-.profile-pic h5{
-    margin-top: 0;
-    margin-bottom: 2px;
-    margin-left: 10px;
+.profile-pic h5 {
+    margin: 0 0 2px 10px;
 }
 
-.profile-pic p{
-    margin:0 0 0 0;
+.profile-pic p {
+    margin: 0;
 }
 
-.profile-pic p a{
+.profile-pic p a {
     color: var(--accent);
     font-weight: bolder;
     margin: 10px;
 }
 
-.blog-right-sidebar{
+.blog-right-sidebar {
     border-left: solid var(--accent) 2px;
-    padding: 15px 0px 15px 0px;
+    padding: 15px 0;
 }
 
-.blog-right-sidebar ul{
+.blog-right-sidebar ul {
     padding-left: 0;
-    margin: 0 0 0 0;
+    margin: 0;
     overflow: scroll;
 }
 
-
-
-.blog-right-sidebar ul li{
-    padding-left: 30px;
+.blog-right-sidebar ul li {
+    padding: 20px 0 10px 30px;
     font-size: 16px;
-    padding-top: 20px;
-    padding-bottom: 10px;
 }
 
-.blog-right-sidebar ul li:hover{
+.blog-right-sidebar ul li:hover {
     color: var(--accent);
 }
 
-.selected-ele{
+.selected-ele {
     border-left: solid var(--accent) 4px;
     color: var(--accent);
-    padding: 0;
+    padding: 14px;
 }
