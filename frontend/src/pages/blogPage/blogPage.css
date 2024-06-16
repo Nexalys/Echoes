@@ -25,6 +25,7 @@
 .blog-content{
     margin: 28px 28px 28px 28px ;
     width: 70%;
+    min-height: 46.5vmin;
     background-color: var(--background);
     box-shadow: var(--floating-shadow);
     height: max-content;
@@ -116,12 +117,13 @@ hr{
 
 .blog-right-sidebar{
     border-left: solid var(--accent) 2px;
-    padding: 0 20px 10px 20px;
+    padding: 15px 0px 15px 0px;
 }
 
 .blog-right-sidebar ul{
     padding-left: 0;
     margin: 0 0 0 0;
+    overflow: scroll;
 }
 
 
