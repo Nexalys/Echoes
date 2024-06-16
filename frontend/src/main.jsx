@@ -4,6 +4,7 @@ import { Homepage } from './pages/echoes/page'
 import { ProfilePage } from './pages/profilepage/ProfilePage'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { MarkdownEditor } from './pages/markdown-page/markdown-page';
+import { BlogPage } from './pages/blogPage/blogPage';
 
 import './index.css'
 
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
   {
     path: '/profile',
     element: <ProfilePage />
+  },
+  {
+    path: '/blog',
+    element: <BlogPage />
   }
 ]);
  

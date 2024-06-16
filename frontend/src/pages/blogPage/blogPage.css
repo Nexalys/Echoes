@@ -1,0 +1,144 @@
+.blog-seeker{
+    margin-top: 4vh;
+    height: 3px;
+    width: 98%;
+    background-color: gray;
+}
+
+.blog-seeker-marker{
+    height: 3px;
+    background-color: var(--accent);
+}
+
+.blog-content-container{
+    width: 98%;
+    background-color: var(--background);
+    box-shadow: var(--floating-shadow);
+    height: fit-content;
+    min-height: 100vh;
+    border-radius: 15px;
+    margin-top: 3vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.blog-content{
+    margin: 28px 28px 28px 28px ;
+    width: 70%;
+    background-color: var(--background);
+    box-shadow: var(--floating-shadow);
+    height: max-content;
+    border-radius: 15px;
+    padding: 3vw;
+}
+
+.blog-right-side{
+    margin: 28px 28px 28px 28px ;
+    width: 20%;
+}
+
+.blog-right-sidebar{
+    width: 80%;
+    background-color: var(--background);
+    box-shadow: var(--floating-shadow);
+    height: max-content;
+    border-radius: 15px;
+}
+
+li{
+    list-style: none;
+    font-size: 16px;
+}
+
+.icon{
+    height:1.5rem;
+    width:4.5rem;
+    font-size: 37px;
+    color: var(--accent);
+}
+
+.eye{
+    font-size: 40px;
+}
+
+.title-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.icons{
+    display: flex;
+    gap: 1px;
+    align-items: center;
+}
+
+h1{
+    margin: 0 0 0 0;
+}
+
+hr{
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    height: 0px;
+    width: 86%;
+    margin-left: 0;
+    background-color: #020A27;
+    border: none;
+    box-shadow: none;
+    border: 1px solid #020A27;
+    align-self: self-start;
+}
+
+.profile-pic{
+    display: flex;
+    margin: 15px 0 15px 0;
+}
+
+.profile-pic div{
+    margin-left: 10px;
+}
+
+.profile-pic h5{
+    margin-top: 0;
+    margin-bottom: 2px;
+    margin-left: 10px;
+}
+
+.profile-pic p{
+    margin:0 0 0 0;
+}
+
+.profile-pic p a{
+    color: var(--accent);
+    font-weight: bolder;
+    margin: 10px;
+}
+
+.blog-right-sidebar{
+    border-left: solid var(--accent) 2px;
+    padding: 0 20px 10px 20px;
+}
+
+.blog-right-sidebar ul{
+    padding-left: 0;
+    margin: 0 0 0 0;
+}
+
+
+
+.blog-right-sidebar ul li{
+    padding-left: 30px;
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.blog-right-sidebar ul li:hover{
+    color: var(--accent);
+}
+
+.selected-ele{
+    border-left: solid var(--accent) 4px;
+    color: var(--accent);
+    padding: 0;
+}
