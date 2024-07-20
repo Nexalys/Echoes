@@ -1,7 +1,16 @@
 .author-details {
     display: flex;
     flex-direction: row;
-    height: 50px;
+    /* height: 50px; */
     align-items: center;
-    gap: 5px;    
+    gap: 5px;   
+    margin: 0px; 
+    color: var(--text);
+    
+}
+
+.author-details-circle{
+    font-size: larger;
+    font-weight: bolder;
+    margin-bottom: 1px;
 }

@@ -5,8 +5,10 @@ export function AuthorDetails({ username='Username', date='12 Jun 2024' }) {
     return (
         <div className='author-details'>
             <ProfilePicture size='really-small'/>
-            {username} 
-            •
+            {username}
+            <span className='author-details-circle'>
+                •
+            </span>
             {date}
         </div>
     )

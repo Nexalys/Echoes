@@ -12,12 +12,40 @@
     gap: 2vw;
 }
 
-.homepage-featured {
+.homepage-sidebar {
     width: 27vw;
     height: 100vh;
     box-shadow: var(--main-shadow);
     border-radius: 15px;
+    overflow: scroll;
 }
+
+.homepage-sidebar h3{
+    color: var(--accent);
+}
+
+.homepage-sidebar-featured{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.homepage-sidebar-topnews{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.homepage-sidebar-bloglist{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4vh;
+}
+
 
 .homepage-main {
     width: 67vw;
