@@ -1,0 +1,89 @@
+import React from 'react';
+import { useForm } from 'react-hook-form';
+
+import "./sign-up.css";
+
+export default function Signup() {
+  const { register, handleSubmit, formState: { errors }, watch } = useForm();
+  const onSubmit = data => console.log(data);
+  
+  const password = watch("password"); // Watch the password input field
+  
+  return (
+    
+    <div className='signup-container'>
+        <p>ECHOES</p>
+
+        <div className='signup-main'>
+            <div className='signup-main-text'>
+                <h3>Sign-Up here, to start writing</h3>
+                <p>
+                Enter the following data so that we can make your account and you can start publishing your amazing written work! We will need you to connect your preferred cloud storage platform ( Google Drive, Dropbox etc. ) to store your blog files, we’d recommend using the same email here as on said platform. We are happy to have you as a writer on our platform ❤
+                </p>
+            </div>
+
+            <form className="signup-form" onSubmit={handleSubmit(onSubmit)}>
+            <div className="signup-form-group">
+                    <label className="floating-label">First Name *</label>
+                <div className='signup-input-container'>
+                    <input className="signup-input" type="text" {...register("firstName", { required: true, maxLength: 80 })} />
+                </div>
+                {errors.firstName && <p className="signup-error-message">First name is required and should be less than 80 characters.</p>}
+            </div>
+
+            <div className="signup-form-group">
+                <label className="floating-label">Last Name *</label>
+                <div className='signup-input-container'>
+                    <input className="signup-input" type="text" {...register("lastName", { required: true, maxLength: 100 })} />
+                </div>
+                {errors.lastName && <p className="signup-error-message">Last name is required and should be less than 100 characters.</p>}
+            </div>
+
+            <div className="signup-form-group">
+                <label className="floating-label">Username *</label>
+                <div className='signup-input-container'>
+                    <input className="signup-input" type="text" {...register("username", { required: true })} />
+                </div>
+                {errors.username && <p className="signup-error-message">Username is required.</p>}
+            </div>
+
+            <div className="signup-form-group">
+                <label className="floating-label">Email *</label>
+                <div className='signup-input-container'>
+                    <input className="signup-input" type="email" {...register("email", { 
+                    required: true, 
+                    pattern: /^[a-zA-Z][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/ 
+                    })} />
+                </div>
+                {errors.email && <p className="signup-error-message">Invalid email address. Ensure it starts with a letter and contains an "@" symbol.</p>}
+            </div>
+
+            <div className="signup-form-group">
+                <label className="floating-label">Password *</label>
+                <div className='signup-input-container'>
+                    <input className="signup-input" type="password" {...register("password", { 
+                    required: true, 
+                    minLength: 8, 
+                    pattern: /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.*[0-9]).{8,}$/,
+                    })} />
+                </div>
+                {errors.password && <p className="signup-error-message">Password is required and must be at least 8 characters long, contain an uppercase letter, a special character, and a number.</p>}
+            </div>
+
+            <div className="signup-form-group">
+                <label className="floating-label">Confirm Password *</label>
+                <div className='signup-input-container'>
+                    <input className="signup-input" type="password" {...register("confirmPassword", { 
+                    required: true, 
+                    validate: value => value === password || "Passwords do not match"
+                    })} />
+                </div>
+                {errors.confirmPassword && <p className="signup-error-message">{errors.confirmPassword.message}</p>}
+            </div>
+
+            <input className="sign-up-button" type="submit" value="Sign-Up" />
+            </form>
+        </div>
+    </div>
+  );
+}

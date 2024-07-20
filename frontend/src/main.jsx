@@ -5,6 +5,7 @@ import { ProfilePage } from './pages/profilepage/ProfilePage'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { MarkdownEditor } from './pages/markdown-page/markdown-page';
 import { BlogPage } from './pages/blogPage/blogPage';
+import Signup from './pages/sign-up/sign-up';
 
 import './index.css'
 
@@ -15,7 +16,7 @@ const router = createBrowserRouter([
   }, 
   {
     path: '/sign-up',
-    element: <Homepage />, 
+    element: <Signup />, 
   }, 
   {
     path: '/markdown',
