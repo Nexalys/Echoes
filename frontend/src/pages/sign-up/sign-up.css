@@ -45,7 +45,7 @@
     max-width: 40%;
     color: var(--text);
     font-family: Avenir;
-    font-size: 16px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 350;
     line-height: normal;
@@ -89,7 +89,7 @@
     display: flex;
     width: 100%;
     border-radius: 50px;
-    border: 8px solid var(--background);
+    border: 15px solid var(--background);
     outline: 2px solid var(--accent);
 }
 
@@ -100,7 +100,7 @@
     background-color: var(--background);
     padding: 0 2px;
     color: var(--accent);
-    font-size: 14px;
+    font-size: 16px;
     pointer-events: none;
 }
 
@@ -141,7 +141,7 @@
     left: 20px;
     top: 45px; */
     color: var(--secondary);
-    font-size: 14px;
+    font-size: 16px;
     margin: 0px;
     margin-left: 30px;
     margin-top: 10px;
@@ -151,7 +151,7 @@
     display: flex;
     /* border: 2px solid red; */
     font-family: Avenir;
-    font-size: 16px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 350;
     line-height: normal;

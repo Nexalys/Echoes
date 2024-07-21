@@ -15,7 +15,7 @@
     background-color: var(--background);
     box-shadow: var(--floating-shadow);
     height: fit-content;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     border-radius: 15px;
     margin-top: 3vh;
     display: flex;
@@ -78,13 +78,14 @@ h1 {
 }
 
 hr {
+    margin: 0px;
     margin-top: 1vh;
     margin-bottom: 1vh;
     height: 0;
-    width: 86%;
-    background-color: #020A27;
+    width: 90%;
+    background-color: var(--text);
     border: none;
-    border: 1px solid #020A27;
+    border: 1px solid var(--text);
     align-self: flex-start;
 }
 
@@ -135,4 +136,69 @@ hr {
     border-left: solid var(--accent) 4px;
     color: var(--accent);
     padding: 14px;
+}
+
+.author-detail-container {
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.blogpage-markdown-container {
+    margin: 20px 40px;
+}
+
+.blogpage-blog-username-container {
+    border-radius: 25px;
+    background: var(--background);
+    box-shadow: var(--floating-shadow);
+    width: 98%;
+    height: fit-content;
+    border-radius: 15px;
+    margin-top: 5vh;
+    margin: 10vh 5px;
+    padding: 0vh 40px 10vh 40px;
+    box-sizing: border-box;
+    max-height: 90vh;
+    overflow: scroll;
+}
+
+.blogpage-blog-username-container h3 {
+    margin-left: 3vw;
+}
+
+.blogpage-blog-username-container h2 {
+    background-image: linear-gradient(92deg, var(--gradient) 40.52%, var(--accent) 103%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.blogpage-blog-username-text {
+    display: flex;
+    flex-direction: row;
+}
+
+.blogpage-blog-username-text h3 {
+    margin: 50px;
+    display: flex;
+    align-items: center;
+    margin-right: 0px;
+}
+
+.blogpage-blog-username-text h2 {
+    display: flex;
+    align-items: center;
+    margin: 50px;
+    margin-left: 0px;
+    /* margin-bottom: 0px; */
+}
+
+
+.blogpage-blog-username {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
 }

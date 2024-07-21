@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import circle1 from "../../../public/assets/circle1.svg"
 import circle2 from "../../../public/assets/circle2.svg"
@@ -13,9 +13,13 @@ import "./sign-up.css";
 
 export default function Signup() {
   const { register, handleSubmit, formState: { errors }, watch } = useForm();
-  const onSubmit = data => console.log(data);
+  const navigate = useNavigate(); 
+  const onSubmit = data => {
+    console.log(data);
+    navigate('/'); 
+  };  
   
-  const password = watch("password"); // Watch the password input field
+  const password = watch("password"); 
   
   return (
     

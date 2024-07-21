@@ -132,7 +132,7 @@
 }
 
 .blog-subject:hover{
-   color: var(--primary);
+   background-color:var(--background2);
     cursor: pointer;
     /* color: var(--accent); */
 }
