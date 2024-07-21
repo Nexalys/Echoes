@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { MarkdownEditor } from './pages/markdown-page/markdown-page';
 import { BlogPage } from './pages/blogPage/blogPage';
 import Signup from './pages/sign-up/sign-up';
+import Signin from './pages/sign-in/sign-in';
 
 import './index.css'
 
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: '/sign-up',
     element: <Signup />, 
+  }, 
+  {
+    path: '/sign-in',
+    element: <Signin />, 
   }, 
   {
     path: '/markdown',

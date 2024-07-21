@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import circle1 from "../../../public/assets/circle1.svg"
 import circle2 from "../../../public/assets/circle2.svg"
@@ -95,7 +95,7 @@ export default function Signup() {
                 </div>
             </form>
             <div className="signup-signin-link">
-                <Link to="/signin">Have an account? Sign in here.</Link>
+                <Link to="/sign-in">Have an account? Sign in here!</Link>
             </div>
 
         </div>
