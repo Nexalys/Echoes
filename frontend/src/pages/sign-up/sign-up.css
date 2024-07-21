@@ -128,10 +128,11 @@
     font-style: normal;
     font-weight: 350;
     line-height: normal;
+    transition: all 0.3s ease-in-out;
 }
 
 .signup-button:hover {
-    background-color: var(--secondary);
+    background-color: var(--background2);
 }
 
 .signup-form-group p {
