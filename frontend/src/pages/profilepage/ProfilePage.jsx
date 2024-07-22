@@ -3,12 +3,14 @@ import { Blog } from '../../components/blog/blog'
 import { ProfilePicture } from '../../components/profile-picture/profile-picture'
 import { BlogDescription } from '../../components/blog-description/BlogDescription'
 import { AuthorDetails } from '../../components/author-details/author-details'
+import { Blogsmall } from '../../components/blog-small/blog-small'
+
 
 import homevector from '../../../public/assets/homevector.svg'
 import notificationvecctor from '../../../public/assets/notificationvecctor.svg'
 import bookmarkvector from '../../../public/assets/bookmarkvector.svg'
 import createvector from '../../../public/assets/createvector.svg'
-import blogvector from '../../../public/assets/blogvector.svg'
+import blogvector from '../../../public/assets/blogs-icon.svg'
 import profilepagemain from '../../../public/assets/profilepagemain.jpeg'
 
 import './ProfilePage.css'
@@ -21,11 +23,11 @@ export function ProfilePage({fullname = "Full Name" , url="https://i.pinimg.com/
         <div className='profilepage-container'>
             <div className='profilepage-left-sidebar'>
               <div className='profilepage-left-images'>
-                <img src={homevector} alt="" />
-                <img src={notificationvecctor} alt="" />
-                <img src={blogvector} alt="" />
-                <img src={bookmarkvector} alt="" />
-                <img src={createvector} alt="" />
+                <img src={homevector} alt="" className='profilepage-images'/>
+                <img src={notificationvecctor} alt="" className='profilepage-images'/>
+                <img src={blogvector} alt="" className='profilepage-images'/>
+                <img src={bookmarkvector} alt="" className='profilepage-images'/>
+                <img src={createvector} alt="" className='profilepage-images'/>
               </div>
                 <ProfilePicture className="profilepage-left-picture"/>
             </div>
@@ -41,6 +43,8 @@ export function ProfilePage({fullname = "Full Name" , url="https://i.pinimg.com/
               </div>
               <div className='profilepage-main-blog-container'>
                 <Blog/>                          
+                <Blog/>                          
+                <Blog/>                          
               </div>
             </div>
 
@@ -48,6 +52,7 @@ export function ProfilePage({fullname = "Full Name" , url="https://i.pinimg.com/
             <div className='profilepage-right-sidebar'>
             <div className="profilepage-right-image-container">
               <img src='https://i.pinimg.com/564x/74/5c/e7/745ce700e51c7112bce1213c2a61ddfa.jpg' className="profilepage-right-image"/>
+              {/* <ProfilePicture size="large"/> */}
             </div>
             <div className='profilepage-right-content'>
               <h3>{username}</h3>

@@ -11,16 +11,18 @@
     font-weight: 600;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     box-shadow: var(--main-shadow);
     transition-property: border-color, color;
     transition-duration: 0.4s;
     transition-timing-function: ease-in-out;
+    /* margin: 0px; */
 }
 
 .new-button:hover{
     border-color: var(--primary);
     color: var(--primary);
+    cursor: pointer;
 }
 
 .big-button-container button {

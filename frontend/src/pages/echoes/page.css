@@ -63,3 +63,21 @@
     box-sizing: border-box;
     overflow-x: hidden;
 }
+
+
+@media (max-width: 1000px) {
+    .homepage-container{
+        width: 100vw;
+    }
+.homepage-sidebar{
+    display: none;
+    box-sizing: border-box;
+}
+.homepage-main{
+    box-sizing: border-box;
+    width: 95vw;
+    padding: 0px 4vw;
+    /* margin: 0px 30px; */
+}
+
+}

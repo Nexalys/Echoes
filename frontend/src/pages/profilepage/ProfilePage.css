@@ -11,7 +11,7 @@
 }
 
 .profilepage-left-sidebar {
-    position:sticky;
+    position: sticky;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -37,6 +37,9 @@
     margin-top: 2vh;
 }
 
+.profilepage-images :hover{
+    cursor: pointer;
+}
 
 .profilepage-left-images img:hover {
     cursor: pointer;
@@ -44,7 +47,7 @@
 
 .profilepage-main {
     /* min-height: 100vh; */
-    min-width: 900px;
+    /* min-width: 900px; */
     width: 65vw;
     display: flex;
     flex-direction: column;
@@ -106,7 +109,8 @@
 .profilepage-main-heading h4 {
     color: var(--text);
 }
-.profilepage-main-blog-container{
+
+.profilepage-main-blog-container {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -114,6 +118,7 @@
     align-items: center;
     gap: 2vh;
 }
+
 .profilepage-right-sidebar {
     display: flex;
     flex-direction: column;
@@ -149,11 +154,6 @@
 
 .profilepage-right-sidebar h3 {
     color: var(--text);
-    /* font-family: Poppins; */
-    /* font-size: 2.9rem; */
-    /* font-style: normal;
-    font-weight: 700;
-    line-height: normal; */
     margin: 0px;
     margin-top: 3vh;
 }
@@ -220,9 +220,79 @@
     /* line-height: normal; */
 }
 
-.profilepage-right-authordetails{
+.profilepage-right-authordetails {
     margin: 10px 0px;
     display: flex;
     flex-direction: column;
     gap: 1vh;
+}
+
+
+@media (max-width: 1489px) {
+    .profilepage-container {
+        flex-direction: column-reverse;
+        align-items: center;
+        width: 100vw;
+        box-sizing: border-box;
+    }
+
+    .profilepage-left-images {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-items: center;
+        align-items: flex-start;
+        align-self: center;
+        gap: 5vh;
+        margin-top: 0px;
+        margin-right:auto ;
+    }
+
+    .profilepage-left-sidebar {
+        /* border: 2px solid red; */
+        box-sizing: border-box;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: auto;
+        padding: 1rem 0;
+        padding: 2vh 5vw;
+        margin-top: 2rem;
+    }
+
+
+
+    .profilepage-main {
+        /* box-sizing: border-box; */
+        width: 98vw;
+        height: auto;
+        overflow: visible;
+        box-shadow: var(--floating-shadow);
+        padding-bottom: 40px;
+    }
+    
+    .profilepage-main-blog-container {
+        width: 95%;
+        gap: 4vh;
+    }
+
+    .profilepage-right-image-container{
+        margin: 0px;
+    }
+
+    .profilepage-right-sidebar {
+        width: 90vw;
+        height: auto;
+        overflow: visible;
+        margin-bottom: 2rem;
+    }
+
+    .profilepage-right-following{
+        display: none;
+    }
+
+    .profilepage-right-sidebar p {
+        width: auto;
+    }
 }

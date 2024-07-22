@@ -224,3 +224,19 @@ hr {
     width: 90%;
     align-self: center;
 }
+
+@media (max-width: 1000px) {
+    .blog-right-side{
+        display: none;
+    }
+
+    .blog-content{
+        width: 100%;
+    }
+
+    .blogpage-blog-username{
+        /* display: flex; */
+        grid-template-columns: repeat(1, 10fr);
+
+    }
+}

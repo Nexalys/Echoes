@@ -5,11 +5,12 @@
     list-style: none;
     display: flex;
     justify-content: flex-start;
-    overflow-x: auto;
+    overflow-x: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
     margin-bottom: 11px;
     text-wrap: nowrap;
+    width: 100%;
 }
 
 .list-left-mask{
