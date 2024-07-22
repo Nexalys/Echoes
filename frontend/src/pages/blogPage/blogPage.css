@@ -15,7 +15,6 @@
     background-color: var(--background);
     box-shadow: var(--floating-shadow);
     height: fit-content;
-    /* min-height: 100vh; */
     border-radius: 15px;
     margin-top: 3vh;
     display: flex;
@@ -28,9 +27,10 @@
     min-height: 46.5vmin;
     background-color: var(--background);
     box-shadow: var(--floating-shadow);
-    height: max-content;
+    height: 80vh;
     border-radius: 15px;
     padding: 3vw;
+    overflow: scroll;
 }
 
 .blog-right-side {
@@ -60,6 +60,22 @@ li {
 
 .eye {
     font-size: 40px;
+}
+
+.eye :hover{
+    transition: all 0.3s ease-in-out;
+    color: var(--secondary);
+    cursor: pointer;
+}
+.banner :hover{
+    transition: all 0.3s ease-in-out;
+    color: var(--secondary);
+    cursor: pointer;
+}
+
+.banner{
+    font-size: 32px;
+    margin-top: 4px;
 }
 
 .title-container {
@@ -147,10 +163,13 @@ hr {
 }
 
 .blogpage-markdown-container {
-    margin: 20px 40px;
+    margin: 50px 40px;
+    width: 88%;
 }
 
 .blogpage-blog-username-container {
+    display: flex;
+    flex-direction: column;
     border-radius: 25px;
     background: var(--background);
     box-shadow: var(--floating-shadow);
@@ -161,7 +180,7 @@ hr {
     margin: 10vh 5px;
     padding: 0vh 40px 10vh 40px;
     box-sizing: border-box;
-    max-height: 90vh;
+    max-height: 60vh;
     overflow: scroll;
 }
 
@@ -200,5 +219,8 @@ hr {
 .blogpage-blog-username {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 40px;
+    /* border: 2px solid red; */
+    width: 90%;
+    align-self: center;
 }
