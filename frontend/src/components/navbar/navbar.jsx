@@ -13,8 +13,11 @@ export function Navbar() {
                     </div>
                     <h3 className='logo'>ECHOES</h3>
                 </div>
-                <Input placeholder='Search' />
+                <div className='navbar-search-container'>
+                    <Input placeholder='Search' />
+                </div>
             </div>
+
             <div className='navbar-second-half'>
                 <NewButton />
                 <ProfilePicture />

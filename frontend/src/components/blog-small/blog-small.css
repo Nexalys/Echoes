@@ -1,6 +1,6 @@
 .blog-small-container {
     /* width: 75%; */
-    min-width: 600px;
+    min-width: 540px;
     box-shadow: var(--main-shadow);
     padding: 1% 2%;
     box-sizing: border-box;

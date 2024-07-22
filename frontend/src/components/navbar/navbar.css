@@ -1,6 +1,6 @@
 .navbar {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     padding: 0 2%;
     box-shadow: var(--main-shadow);
     width: 93vw;
@@ -14,8 +14,26 @@
 .navbar-first-half {
     display: flex;
     align-items: center;
-    gap: 10%;
+    /* gap: 10%; */
     margin-right: auto;
+    /* border: 2px solid red; */
+    /* flex-grow: 1; */
+    justify-content: flex-start;
+    width: 90vw;
+    /* gap: 2vw; */
+}
+
+.navbar-search-container{
+    /* border: 2px solid red; */
+    /* flex-grow: 1; */
+    box-sizing: border-box;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    margin: 0px 40px;
+    max-width: 900px;
+    /* margin-left: auto; */
+    /* border: 10px solid red; */
 }
 
 .navbar-second-half {
@@ -23,4 +41,5 @@
     align-items: center;
     justify-content: space-around;
     min-width: 10%;
+    gap: 30px;
 }
