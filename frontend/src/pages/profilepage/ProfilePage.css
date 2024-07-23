@@ -228,7 +228,7 @@
 }
 
 
-@media (max-width: 1489px) {
+@media (max-width: 1100px) {
     .profilepage-container {
         flex-direction: column-reverse;
         align-items: center;

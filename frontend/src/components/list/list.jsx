@@ -13,7 +13,7 @@ const sampleOptions = [
     'Research ',
     'Academia ',
     'Pop Culture ',
-    'History ',
+    'History',
     'Current Events ',
     'General Knowledge',
 ];
