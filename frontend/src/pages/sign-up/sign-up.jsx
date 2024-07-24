@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
+import { signupUser } from '../firebase';
 
 import circle1 from "../../../public/assets/circle1.svg"
 import circle2 from "../../../public/assets/circle2.svg"
@@ -15,6 +16,7 @@ export default function Signup() {
   const { register, handleSubmit, formState: { errors }, watch } = useForm();
   const navigate = useNavigate(); 
   const onSubmit = data => {
+    signupUser(data.email, data.password, data.username);
     console.log(data);
     navigate('/'); 
   };  

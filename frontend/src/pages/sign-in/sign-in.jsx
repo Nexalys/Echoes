@@ -2,6 +2,8 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 
+import { signinUser } from '../firebase';
+
 import circle1 from "../../../public/assets/circle1.svg"
 import circle2 from "../../../public/assets/circle2.svg"
 import circle3 from "../../../public/assets/circle3.svg"
@@ -17,7 +19,8 @@ export default function Signin() {
 
   const onSubmit = data => {
     console.log(data);
-    navigate('/'); 
+    signinUser(data.username, data.password);
+    // navigate('/'); 
   }; 
   return (
     
