@@ -4,16 +4,18 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { updateProfile } from "firebase/auth";
 import { error } from "pdf-lib";
 
-// Your web app's Firebase configuration
+
+const apiKey = import.meta.env.VITE_apiKey;
+const authDomain = import.meta.env.VITE_authDomain;
+const projectID = import.meta.env.VITE_projectID;
+const storageBucket = import.meta.env.VITE_storageBucket;
+const messagingSenderId = import.meta.env.VITE_messagingSendingId;
+const appID = import.meta.env.VITE_appId;
+const measurements = import.meta.env.VITE_measurements;
+
 const firebaseConfig = {
-  apiKey: "AIzaSyDFldbfdluAqTadzKXbuYvcusAoqlxKqJU",
-  authDomain: "echoes-ad34e.firebaseapp.com",
-  projectId: "echoes-ad34e",
-  storageBucket: "echoes-ad34e.appspot.com",
-  messagingSenderId: "853035279016",
-  appId: "1:853035279016:web:b2782e285f89090b38589d",
-  measurementId: "G-6XTYGX72PJ"
-};
+  apiKey, authDomain, projectID, storageBucket, messagingSenderId, appID, measurements
+}
 
 // Ensure Firebase is initialized only once
 const app = initializeApp(firebaseConfig);
