@@ -2,8 +2,8 @@ import { initializeApp } from "firebase/app";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { updateProfile } from "firebase/auth";
-import { error } from "pdf-lib";
-
+import { getFirestore } from 'firebase/firestore';
+import { collection, addDoc } from "firebase/firestore";
 
 const apiKey = import.meta.env.VITE_apiKey;
 const authDomain = import.meta.env.VITE_authDomain;
@@ -19,6 +19,9 @@ const firebaseConfig = {
 
 // Ensure Firebase is initialized only once
 const app = initializeApp(firebaseConfig);
+
+const database = getFirestore(app);
+const collectionRef = collection(database, "users");
 
 export async function signupUser(email, password, username) {
   try {
@@ -39,7 +42,17 @@ export async function signupUser(email, password, username) {
     console.error("Error signing up:", error.message);
     throw error;
   }
+
+  addDoc(collectionRef,{
+    email:user.email,
+    password: user.password
+  }).then(()=>{
+    alert("user added");
+  }).catch((err)=>{
+    alert(err.message);
+  })
 }
+
 
 export async function signinUser(email, password){
   try{

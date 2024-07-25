@@ -2,9 +2,13 @@ import { Navbar } from '../../components/navbar/navbar'
 import { Blog } from '../../components/blog/blog'
 import { List } from '../../components/list/list'
 import { BlogList } from '../../components/sidebar-blog-list/sidebar-blog-list';
+import { useParams } from 'react-router-dom';
+
+
 
 import './page.css';
 export function Homepage() {
+    const { username } = useParams();
     return (
         <div className='homepage-container'>
             <Navbar />
@@ -13,19 +17,19 @@ export function Homepage() {
                     <div className='homepage-sidebar-featured'>
                         <h3>Featured</h3>
                         <div className='homepage-sidebar-bloglist'>
-                            <BlogList/>
-                            <BlogList/>
-                            <BlogList/>
-                            <BlogList/>
+                            <BlogList username={username} />
+                            <BlogList />
+                            <BlogList />
+                            <BlogList />
                         </div>
                     </div>
                     <div className='homepage-sidebar-topnews'>
                         <h3>Top News</h3>
                         <div className='homepage-sidebar-bloglist'>
-                            <BlogList/> 
-                            <BlogList/> 
-                            <BlogList/> 
-                            <BlogList/> 
+                            <BlogList />
+                            <BlogList />
+                            <BlogList />
+                            <BlogList />
                         </div>
                     </div>
                 </div>

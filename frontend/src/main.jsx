@@ -13,20 +13,24 @@ import './index.css'
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Homepage />
-  }, 
+    element: <Homepage />,
+  },
+  {
+    path: '/:username',
+    element: <Homepage />,
+  },
   {
     path: '/sign-up',
-    element: <Signup />, 
-  }, 
+    element: <Signup />,
+  },
   {
     path: '/sign-in',
-    element: <Signin />, 
-  }, 
+    element: <Signin />,
+  },
   {
     path: '/markdown',
     element: <MarkdownEditor />
-  }, 
+  },
   {
     path: '/profile',
     element: <ProfilePage />
@@ -36,9 +40,9 @@ const router = createBrowserRouter([
     element: <BlogPage />
   }
 ]);
- 
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <RouterProvider router={router} />
   </React.StrictMode>,
 )
