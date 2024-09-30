@@ -3,7 +3,7 @@ import BlogImage from '../../../public/assets/blog-preview.jpeg';
 import './blog.css';
 import { AuthorDetails } from '../author-details/author-details';
 
-export function Blog({ summary = ("Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque mollitia soluta suscipit minima facilis sequi quod quia itaque repudiandae laboriosam deleniti labore, magnam perspiciatis maxime aperiam fugit neque odio voluptas autem ut. Consequatur tenetur velit corrupti dolorum quidem aliquam voluptatibus, aperiam porro vitae ratione, magnam quisquam voluptatum fuga? Eligendi ea incidunt et illum expedita praesentium accusamus. Maxime animi tempore saepe aspernatur totam repellat placeat, illo, accusantium ab, reprehenderit fuga fugit labore voluptatem autem repudiandae porro in! Odit suscipit omnis adipisci molestias officia maiores ab explicabo a eum obcaecati itaque dolor eius impedit rerum ad aliquam, excepturi debitis voluptatum repellendus expedita?"), subject = 'Subject' }) {
+export function Blog({title = ("Blog Title"), summary = ("Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque mollitia soluta suscipit minima facilis sequi quod quia itaque repudiandae laboriosam deleniti labore, magnam perspiciatis maxime aperiam fugit neque odio voluptas autem ut. Consequatur tenetur velit corrupti dolorum quidem aliquam voluptatibus, aperiam porro vitae ratione, magnam quisquam voluptatum fuga? Eligendi ea incidunt et illum expedita praesentium accusamus. Maxime animi tempore saepe aspernatur totam repellat placeat, illo, accusantium ab, reprehenderit fuga fugit labore voluptatem autem repudiandae porro in! Odit suscipit omnis adipisci molestias officia maiores ab explicabo a eum obcaecati itaque dolor eius impedit rerum ad aliquam, excepturi debitis voluptatum repellendus expedita?"), subject = 'Subject' }) {
 
     const [showTopMask, setShowTopMask] = useState(false);
     const [showBottomMask, setShowBottomMask] = useState(false);
@@ -37,7 +37,7 @@ export function Blog({ summary = ("Lorem ipsum dolor sit amet consectetur adipis
         <div className='blog-container'>
             <div className='blog-info'>
                 <div>
-                    <h4>Blog Title</h4>
+                    <h4>{title}</h4>
                 </div>
                 <span className='line'></span>
                 <div

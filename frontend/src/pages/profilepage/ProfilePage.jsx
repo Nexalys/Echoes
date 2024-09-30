@@ -4,7 +4,8 @@ import { ProfilePicture } from '../../components/profile-picture/profile-picture
 import { BlogDescription } from '../../components/blog-description/BlogDescription'
 import { AuthorDetails } from '../../components/author-details/author-details'
 import { Blogsmall } from '../../components/blog-small/blog-small'
-
+import { useState, useEffect } from 'react'
+import { checkUser } from '../firebase'
 
 import homevector from '../../../public/assets/homevector.svg'
 import notificationvecctor from '../../../public/assets/notificationvecctor.svg'
@@ -16,6 +17,22 @@ import profilepagemain from '../../../public/assets/profilepagemain.jpeg'
 import './ProfilePage.css'
 
 export function ProfilePage({fullname = "Full Name" , url="https://i.pinimg.com/564x/74/5c/e7/745ce700e51c7112bce1213c2a61ddfa.jpg", username="username", followers ="11.1k", description="Tech enthusiast exploring the human side of innovation. Writing about the intersection of technology, culture, and society. Let's navigate this digital journey together."}){
+  const [user, setUser] = useState(null); 
+  // const username = data?.username;
+  useEffect(() => {
+      const fetchUser = async () => {
+        try {
+          const fetchedUser = await checkUser(); 
+          setUser(fetchedUser); 
+        } catch (error) {
+          console.error("Error fetching user:", error);
+        }
+      };
+  
+      fetchUser(); 
+    }, []);
+
+  console.log("user: ", user?.email)
 
   return (
     <div>

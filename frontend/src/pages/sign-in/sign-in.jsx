@@ -1,8 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
-
-import { signinUser } from '../firebase';
+import { SignInUser } from '../firebase';
 
 import circle1 from "../../../public/assets/circle1.svg"
 import circle2 from "../../../public/assets/circle2.svg"
@@ -17,10 +16,15 @@ export default function Signin() {
     const { register, handleSubmit, formState: { errors }, watch } = useForm();
     const navigate = useNavigate();
 
-    const onSubmit = data => {
-        console.log(data);
-        signinUser(data.username, data.password);
-        navigate(`/homepage/${data.username}`);
+    const  onSubmit = async data => {
+        const result = await SignInUser(data);
+        if(result?.error){
+            alert(`Sign-In failed: ${result.error}`);
+        }
+        else{
+            console.log("user credential: ",result.userCredential)
+            navigate(`/profile`, { state: data });
+        }
     };
     return (
 
@@ -59,7 +63,7 @@ export default function Signin() {
                     </div>
                 </form>
                 <div className="signin-signup-link">
-                    <Link to="/sign-up">Don’t have an account? Sign Up!</Link>
+                    <Link to="/sign-up">Don't have an account? Sign Up!</Link>
                 </div>
 
             </div>

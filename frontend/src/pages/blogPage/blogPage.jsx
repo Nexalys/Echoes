@@ -93,7 +93,7 @@ export function BlogPage({ blogTitle = "Blog Title", text = "Lorem ipsum dolor s
                             <div className='profile-pic'>
                                 <ProfilePicture size='small' />
                                 <div>
-                                    <h5>Username</h5>
+                                    <h5>{username}</h5>
                                     <div className='publish-details'>
                                         <p>Published {date} &nbsp; ▪️<a>Follow</a></p>
                                     </div>
