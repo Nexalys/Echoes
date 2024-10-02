@@ -34,7 +34,7 @@ export function Blog({title = ("Blog Title"), summary = ("Lorem ipsum dolor sit 
     }, []);
 
     return (
-        <div className='blog-container'>
+        <div className='blog-container' >
             <div className='blog-info'>
                 <div>
                     <h4>{title}</h4>

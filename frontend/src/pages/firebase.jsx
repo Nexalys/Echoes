@@ -71,7 +71,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { updateProfile, onAuthStateChanged } from "firebase/auth";
-import { getFirestore, getDocs, collection,  addDoc,  deleteDoc,  updateDoc,  doc } from "firebase/firestore";
+import { query, where, getFirestore, getDocs, collection,  addDoc,  deleteDoc,  updateDoc,  doc } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyC5DxXQfBAedHO7lGx3gSa6kHNuDr2xtW4",
@@ -90,7 +90,7 @@ export const db = getFirestore(app);
 export const usersRef = collection(db, "users");
 export const blogsRef = collection(db, "blogs");
 
-const addUser = async (data) => {
+export const addUser = async (data) => {
   try {
     await addDoc(usersRef, {
       firstName: data.firstName,
@@ -103,7 +103,7 @@ const addUser = async (data) => {
   }
 };
 
-const getName = async (uid) => {
+export const getNameFromUid = async (uid) => {
   try {
     const data = await getDocs(usersRef);
     var userDoc = ""
@@ -123,7 +123,7 @@ const getName = async (uid) => {
   }
 };
 
-const getDocument = async (uid) => {
+export const getUserDocumentFromUid = async (uid) => {
   try {
     const data = await getDocs(usersRef);
     var userDoc=""
@@ -183,3 +183,17 @@ export async function checkUser() {
   const user =  await getCurrentUser();
   return user  
 };
+
+export async function getBlogsFromEmail(email) {
+  try {
+      const q = query(blogsRef, where("email", "==", email));
+      const blogData = await getDocs(q);
+      const filteredData = blogData.docs.map((doc) => ({
+          ...doc.data()
+      }))
+      return filteredData;
+  }
+  catch (err) {
+      console.log("Error: ", err)
+  }
+}
