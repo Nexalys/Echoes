@@ -33,9 +33,9 @@ export function ProfilePage({ fullname = "Full Name", url = "https://i.pinimg.co
         setUser(fetchedUser);
 
         await fetchUserBlogs(fetchedUser.email)
-
         const fullUser = await getUserDocumentFromUid(fetchedUser.uid)
         setUser(fullUser.document.data());
+
       } catch (error) {
         console.error("Error fetching user:", error);
       }
@@ -45,7 +45,7 @@ export function ProfilePage({ fullname = "Full Name", url = "https://i.pinimg.co
     
   }, []);
   
-  console.log("user: ", user)
+  // console.log("user: ", user)
   // console.log("blog data: ", userBlogs)
 
 

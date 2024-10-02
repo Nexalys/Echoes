@@ -1,4 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom'; 
+
 import BlogImage from '../../../public/assets/blog-preview.jpeg';
 import './blog.css';
 import { AuthorDetails } from '../author-details/author-details';
@@ -8,6 +10,11 @@ export function Blog({title = ("Blog Title"), summary = ("Lorem ipsum dolor sit 
     const [showTopMask, setShowTopMask] = useState(false);
     const [showBottomMask, setShowBottomMask] = useState(false);
     const summaryRef = useRef(null);
+    const navigate = useNavigate();
+
+    const handleBlogClick = () => {
+        navigate('/blog', { state: { title, subject } });
+      };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -25,7 +32,6 @@ export function Blog({title = ("Blog Title"), summary = ("Lorem ipsum dolor sit 
         const element = summaryRef.current;
         element.addEventListener('scroll', handleScroll);
 
-        // Initial check
         handleScroll();
 
         return () => {
@@ -34,7 +40,7 @@ export function Blog({title = ("Blog Title"), summary = ("Lorem ipsum dolor sit 
     }, []);
 
     return (
-        <div className='blog-container' >
+        <div className='blog-container' onClick={()=>handleBlogClick()}>
             <div className='blog-info'>
                 <div>
                     <h4>{title}</h4>

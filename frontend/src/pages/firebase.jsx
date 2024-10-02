@@ -41,7 +41,7 @@
 //   } catch (error) {
 //     console.error("Error signing up:", error.message);
 //     throw error;
-    
+
 //   }
 //   // addDoc(collectionRef,{
 //   //   email: email,
@@ -71,7 +71,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { updateProfile, onAuthStateChanged } from "firebase/auth";
-import { query, where, getFirestore, getDocs, collection,  addDoc,  deleteDoc,  updateDoc,  doc } from "firebase/firestore";
+import { query, where, getFirestore, getDocs, collection, addDoc, deleteDoc, updateDoc, doc, and } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyC5DxXQfBAedHO7lGx3gSa6kHNuDr2xtW4",
@@ -110,59 +110,59 @@ export const getNameFromUid = async (uid) => {
     for (let i = 0; i < data.docs.length; i++) {
       console.log(data.docs[i], data.docs[i].data().uid, uid, data.docs[i].data().email)
       if (data.docs[i].data().uid === uid) {
-        userDoc = data.docs[i]; 
+        userDoc = data.docs[i];
       }
     }
-  
+
     console.log("document: ", userDoc)
 
-    return {firstName: userDoc?.data().firstName};
-  }catch (err) {
+    return { firstName: userDoc?.data().firstName };
+  } catch (err) {
     console.error(err);
-    return {error: err}
+    return { error: err }
   }
 };
 
 export const getUserDocumentFromUid = async (uid) => {
   try {
     const data = await getDocs(usersRef);
-    var userDoc=""
+    var userDoc = ""
     for (let i = 0; i < data.docs.length; i++) {
       if (data.docs[i].data().uid === uid) {
-        userDoc = data.docs[i]; 
+        userDoc = data.docs[i];
       }
     }
-    return {document: userDoc};
-  }catch (err) {
+    return { document: userDoc };
+  } catch (err) {
     console.error(err);
-    return {error: err}
+    return { error: err }
   }
 };
 
 
 
-export async function SignUpUser(data){
-    try {
-      const userCredential = await createUserWithEmailAndPassword(auth, data.email, data.password);
-      const user = userCredential.user;
-      updateProfile(user, {
-        displayName: data.username
-      })
-      addUser(data);
-      return {userCredential}
-    }
-    catch (err) {
-      return {error : err.message}
-    }
-}
-
-export async function SignInUser(data){
+export async function SignUpUser(data) {
   try {
-    const userCredential = await signInWithEmailAndPassword(auth, data.username, data.password);
-    return {userCredential}
+    const userCredential = await createUserWithEmailAndPassword(auth, data.email, data.password);
+    const user = userCredential.user;
+    updateProfile(user, {
+      displayName: data.username
+    })
+    addUser(data);
+    return { userCredential }
   }
   catch (err) {
-    return {error : err.message}
+    return { error: err.message }
+  }
+}
+
+export async function SignInUser(data) {
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, data.username, data.password);
+    return { userCredential }
+  }
+  catch (err) {
+    return { error: err.message }
   }
 }
 
@@ -170,9 +170,9 @@ export function getCurrentUser() {
   return new Promise((resolve, reject) => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        resolve(user);  
+        resolve(user);
       } else {
-        resolve(null);  
+        resolve(null);
       }
     });
   });
@@ -180,20 +180,67 @@ export function getCurrentUser() {
 
 
 export async function checkUser() {
-  const user =  await getCurrentUser();
-  return user  
+  const user = await getCurrentUser();
+  return user
 };
 
 export async function getBlogsFromEmail(email) {
   try {
-      const q = query(blogsRef, where("email", "==", email));
-      const blogData = await getDocs(q);
-      const filteredData = blogData.docs.map((doc) => ({
-          ...doc.data()
-      }))
-      return filteredData;
+    const q = query(blogsRef, where("email", "==", email));
+    const blogData = await getDocs(q);
+    const filteredData = blogData.docs.map((doc) => ({
+      ...doc.data()
+    }))
+    return filteredData;
   }
   catch (err) {
-      console.log("Error: ", err)
+    console.log("Error: ", err)
+  }
+}
+
+export async function getBlogsFromSubject(subject) {
+  try {
+    const q = query(blogsRef, where("blog_subject", "==", subject));
+    const blogData = await getDocs(q);
+    const filteredData = blogData.docs.map((doc) => ({
+      ...doc.data()
+    }))
+    return filteredData;
+  }
+  catch (err) {
+    console.log("Error: ", err)
+  }
+}
+
+export async function getBlogsFromTitleAndSubject(title, subject) {
+  try {
+    const q = query(
+      blogsRef,
+      where("blog_title", "==", title),
+      where("blog_subject", "==", subject)
+    );
+    const blogData = await getDocs(q);
+    const filteredData = blogData.docs.map((doc) => ({
+      ...doc.data()
+    }))
+    // console.log("filteredData: ", filteredData)
+    return filteredData;
+  }
+  catch (err) {
+    console.log("Error: ", err)
+  }
+}
+
+export async function getUserFromEmail(email) {
+  try {
+    const q = query(usersRef, where("email", "==", email));
+    const blogData = await getDocs(q);
+    const filteredData = blogData.docs.map((doc) => ({
+      ...doc.data()
+    }))
+    return filteredData;
+  }
+  catch (err) {
+    console.log("Error: ", err)
   }
 }
