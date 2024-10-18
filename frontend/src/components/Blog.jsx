@@ -1,7 +1,7 @@
 import { SampleAvatar } from "./ui/Profile.jsx";
 import { useRef, useEffect, useState } from 'react';
 import { HR } from "./ui/Line.jsx";
-import {Icon} from "./ui/Icon.jsx";
+import { Icon } from "./ui/Icon.jsx";
 
 export function BlogListItem(props) {
     const blogListItemRef = useRef(null);

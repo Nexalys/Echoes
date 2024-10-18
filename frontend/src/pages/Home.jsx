@@ -2,7 +2,8 @@ import {BlogCard, BlogList, BlogListItem} from "../components/Blog.jsx";
 import { Filters, FilterOption } from "../components/BlogFilters.jsx";
 import { useState } from "react";
 import { SegmentedControl } from "../components/ui/SegmentedControl.jsx";
-import {HR} from "../components/ui/Line.jsx";
+import { HR } from "../components/ui/Line.jsx";
+import { Button } from "../components/ui/Button.jsx";
 
 export default function Home() {
     const filterOptions = [
@@ -93,7 +94,6 @@ export default function Home() {
                                 globalStateManager={(selected) => {
                                     setFilters((state) => {
                                         state[ind] = {...filter, selected: !selected};
-                                        console.log(state);
                                         return state;
                                     });
                                 }}
@@ -106,7 +106,7 @@ export default function Home() {
                 <BlogCard/>
                 <BlogCard/>
                 <BlogCard/>
-                <span className='underline text-accent mx-auto'>Load more...</span>
+                <Button className='mx-auto'>Load more...</Button>
             </div>
         </section>
     )

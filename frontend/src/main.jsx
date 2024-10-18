@@ -10,6 +10,7 @@ import { ThemeProvider } from 'next-themes';
 import Home from './pages/Home.jsx';
 import Root from './pages/Root.jsx';
 import Error from "./pages/Error.jsx";
+import Editor from "./pages/Editor.jsx";
 
 // CSS/Style Imports
 import './index.css';
@@ -25,6 +26,11 @@ const mainRouter = createBrowserRouter([
                 element: <Home/>
             }
         ]
+    },
+    {
+        path: '/edit',
+        element: <Editor/>,
+        errorElement: <Error/>
     },
 ]);
 

@@ -11,7 +11,7 @@ export function FilterOption(props) {
 
     return (
         <span
-            className={`text-accent px-2 py-1 rounded-md whitespace-nowrap ${selected && 'text-background bg-accent'} reg-transition`}
+            className={`text-accent px-4 py-1 rounded-full whitespace-nowrap ${selected && 'text-background bg-accent'} reg-transition`}
             onClick={handleFilterOptionClick}
         >
             {info.subject}
@@ -23,7 +23,7 @@ export function Filters(props) {
     const { children } = props;
 
     return (
-        <div className='flex gap-5 overflow-auto filter-list'>
+        <div className='flex gap-3 overflow-auto filter-list'>
             {children}
         </div>
     );
