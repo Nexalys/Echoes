@@ -5,13 +5,15 @@ export function ToggleButton(props) {
     const initialState = state === trueState;
     const [ active, setActive ] = useState(initialState);
 
-    setFunc(active ? trueState : falseState);
+    useEffect(() => {
+        setFunc(active ? trueState : falseState);
+    }, [active]);
 
     return (
         <div
             className={`w-[60px] aspect-[2/1] rounded-full relative shadow-sub 
             ${!active && 'bg-text/30'} ${active && 'bg-accent/80'} ${props.className}`}
-             onClick={() => setActive(!active)}
+            onClick={() => setActive(!active)}
         >
             <div
                 className={`aspect-square w-[50%] absolute rounded-full top-0 bottom-0 my-auto bg-background scale-[0.8]

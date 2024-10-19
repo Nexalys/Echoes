@@ -5,23 +5,6 @@ import { updateProfile } from "firebase/auth";
 import { getFirestore } from 'firebase/firestore';
 import { collection, addDoc } from "firebase/firestore";
 
-const apiKey = import.meta.env.VITE_apiKey;
-const authDomain = import.meta.env.VITE_authDomain;
-const projectID = import.meta.env.VITE_projectID;
-const storageBucket = import.meta.env.VITE_storageBucket;
-const messagingSenderId = import.meta.env.VITE_messagingSendingId;
-const appID = import.meta.env.VITE_appId;
-const measurements = import.meta.env.VITE_measurements;
-
-const firebaseConfig = {
-  apiKey, authDomain, projectID, storageBucket, messagingSenderId, appID, measurements
-}
-
-// Ensure Firebase is initialized only once
-const app = initializeApp(firebaseConfig);
-
-const database = getFirestore(app);
-const collectionRef = collection(database, "users");
 
 export async function signupUser(email, password, username) {
   try {

@@ -21,8 +21,6 @@ export function Button(props) {
             break;
     }
 
-    console.log(style + className);
-
     return (
         <button {...props} className={style + ' px-5 py-3 rounded-full reg-transition ' + className}>
             {children}

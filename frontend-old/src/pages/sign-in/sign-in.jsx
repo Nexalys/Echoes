@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
-
+import { FieldsetInput } from "../../components/input/input.jsx";
 import { signinUser } from '../firebase';
 
 import circle1 from "../../../public/assets/circle1.svg"
@@ -33,6 +33,7 @@ export default function Signin() {
                 </div>
 
                 <form className="signin-form" onSubmit={handleSubmit(onSubmit)}>
+                    <FieldsetInput fieldname={'username'}/>
                     <div className="signin-form-group">
                         <label className="signin-floating-label">Username *</label>
                         <div className='signin-input-container'>

@@ -11,6 +11,7 @@ import Home from './pages/Home.jsx';
 import Root from './pages/Root.jsx';
 import Error from "./pages/Error.jsx";
 import Editor from "./pages/Editor.jsx";
+import SignUp from "./pages/SignUp.jsx";
 
 // CSS/Style Imports
 import './index.css';
@@ -30,6 +31,11 @@ const mainRouter = createBrowserRouter([
     {
         path: '/edit',
         element: <Editor/>,
+        errorElement: <Error/>
+    },
+    {
+        path: '/sign-up',
+        element: <SignUp/>,
         errorElement: <Error/>
     },
 ]);

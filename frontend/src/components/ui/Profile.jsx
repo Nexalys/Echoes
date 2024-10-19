@@ -8,7 +8,7 @@ export function SampleAvatar( props ) {
 
 export function Avatar( props ) {
     return (
-        <div className={`${props.className} overflow-hidden shadow-main`}>
+        <div className={`${props.className} overflow-hidden shadow-main min-w-0 aspect-square`}>
             <img alt={props.alt || 'pfp'} src={props.src} className='h-full w-full object-cover'/>
         </div>
     );

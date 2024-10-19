@@ -52,8 +52,9 @@ export default function Home() {
     const [ filters, setFilters ] = useState(filterOptions);
 
     return (
-        <section className='flex gap-[50px]'>
-            <div className="flex flex-col w-[27%] py-[100px] gap-[70px] shadow-main rounded-2xl h-fit">
+        <section className='flex gap-[30px] relative'>
+            <div className="flex flex-col w-[27%] py-[70px] gap-[70px] shadow-main
+            rounded-xl h-[95vh] overflow-y-scroll sticky top-[2.5%]">
                 <BlogList title={'Featured'}>
                     <BlogListItem/>
                     <BlogListItem title={'Random Title'}/>
@@ -67,7 +68,7 @@ export default function Home() {
                     <BlogListItem/>
                 </BlogList>
             </div>
-            <div className="flex flex-col w-[70%] gap-[60px] shadow-main rounded-xl p-[100px]">
+            <div className="flex flex-col w-[75%] gap-[60px] shadow-main rounded-xl p-[100px]">
                 <div className="flex flex-col gap-8 w-[90%] self-center">
                     <div className='flex'>
                         <h2 className='text-4xl font-bold'>Blogs chosen just for you </h2>

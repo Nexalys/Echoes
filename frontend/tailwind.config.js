@@ -21,6 +21,11 @@ export default {
         'left': 'var(--left-mask)',
         'center': 'var(--dual-mask)',
         'right': 'var(--right-mask)',
+      },
+      borderRadius: {
+        'md': '10px',
+        'xl': '15px',
+        '2xl': '20px',
       }
     },
   },

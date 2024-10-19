@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,7 +9,7 @@
 :root {
     font-family: 'Lato', sans-serif;
 
-    --dual-mask: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%, #FFF 50%, rgba(255, 255, 255, 0.00) 100%);
+    --dual-mask: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%,#FFF 10%, #FFF 50%, #FFF 90%, rgba(255, 255, 255, 0.00) 100%);
     --left-mask: linear-gradient(90deg, rgba(255, 255, 255) 100%, rgba(255, 255, 255, 0.00) 0%);
     --right-mask: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);
 }
@@ -27,9 +28,10 @@ h1, h2, h3, h4, h5, h6 {
     --primary: 	230 91% 53%;
     --secondary: 332 90% 72%;
     --accent: 2 91% 62%;
+    --code-bg: 220 40% 50%;
 
-    --main-shadow: -5px -5px 15px 0px rgba(255, 255, 255, 0.70), 5px 5px 15px 0px rgba(30, 31, 40, 0.30);
-    --sub-shadow: -5px -5px 10px 0px rgba(255, 255, 255, 0.70), 5px 5px 10px 0px rgba(30, 31, 40, 0.30);
+    --main-shadow: -5px -5px 10px 0px rgba(255, 255, 255, 0.70), 5px 5px 10px 0px rgba(30, 31, 40, 0.30);
+    --sub-shadow: -5px -5px 5px 0px rgba(255, 255, 255, 0.70), 5px 5px 5px 0px rgba(30, 31, 40, 0.30);
 }
 
 :root[data-theme="dark"] {
@@ -38,17 +40,21 @@ h1, h2, h3, h4, h5, h6 {
     --primary: 	223 19% 71%;
     --secondary: 274 19% 35%;
     --accent: 344 71% 59%;
+    --code-bg: 235 11% 40%;
 
-
+    /*This is just to save an old shadow config I don't want to lose*/
     --save: -5px -5px 12px 0px rgba(161, 166, 207, 0.10), 5px 5px 12px 0px rgba(0, 0, 0, 0.55);
 
     --main-shadow: 2px 2px 2px 0px rgba(216, 224, 253, 0.05) inset, -2px -2px 2px 0px rgba(0, 0, 0, 0.25) inset, -5px -5px 10px 0px rgba(161, 166, 207, 0.05), 5px 5px 5px 0px rgba(8, 10, 17, 0.25);
     --sub-shadow: 5px 5px 10px rgba(0, 0, 0, 0.55), -5px -5px 10px rgba(161, 166, 207, 0.15);
-    --acccent-shadow: var(--main-shadow);
 }
 
 .reg-transition {
     @apply transition-all duration-300 ease-in-out;
+}
+
+* {
+    @apply reg-transition;
 }
 
 .filter-list {
@@ -66,8 +72,90 @@ h1, h2, h3, h4, h5, h6 {
 
 * {
     scrollbar-color: transparent transparent;
+    scroll-behavior: smooth;
 }
 
 .filter-list:hover {
     scrollbar-color: hsl(var(--accent) / 20%) transparent;
+}
+
+.dual-mask {
+    mask: var(--dual-mask)
+}
+
+.editor {
+    font-family: 'JetBrains Mono', serif;
+}
+
+/*
+ * In react code mirrors
+ * To remove the weird line turning up between the gutter
+ * and the editor.
+ */
+
+.cm-gutters {
+    border-right: none !important;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/*
+ * I need to override some styles for the
+ * markdown renderer
+ */
+
+.markdown-preview-container * {
+    background: hsl(var(--background)) !important;
+}
+
+.markdown-preview-container code {
+    background: hsl(var(--code-bg)/10%) !important;
+}
+
+.markdown-preview-container code * {
+    background: transparent !important;
+}
+
+.markdown-preview-container h1 {
+    border-bottom: hsl(var(--text) / 80%) solid 0.5px;
+}
+
+.markdown-preview-container h2 {
+    border-bottom: hsl(var(--text) / 80%) solid 0.5px;
+}
+
+.markdown-preview-container .footnotes {
+    border-top: hsl(var(--text) / 80%) solid 0.5px;
+    border-bottom: hsl(var(--text) / 80%) solid 0.5px;
+}
+
+.markdown-preview-container img {
+    @apply rounded-xl shadow-main;
+}
+
+.markdown-preview-container ol {
+    list-style-type: decimal;
+    padding-left: 2rem;
+}
+
+.markdown-preview-container ul {
+    list-style-type: disc;
+    padding-left: 2rem;
+}
+
+.cm-focused {
+    outline: none !important;
+}
+
+.markdown-preview-container > .wmde-markdown {
+    scroll-behavior: smooth;
+}
+
+/*
+ * I need to override some styles for the
+ * markdown editor
+ */
+
+.editor * {
+    transition: none 0s !important;
 }

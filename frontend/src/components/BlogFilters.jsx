@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {markdown} from "@codemirror/lang-markdown";
 
 export function FilterOption(props) {
     const { info, globalStateManager } = props;
@@ -23,8 +24,9 @@ export function Filters(props) {
     const { children } = props;
 
     return (
-        <div className='flex gap-3 overflow-auto filter-list'>
+        <div className='flex gap-3 overflow-auto filter-list dual-mask px-6'>
             {children}
         </div>
     );
 }
+
