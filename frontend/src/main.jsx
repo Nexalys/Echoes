@@ -12,6 +12,7 @@ import Root from './pages/Root.jsx';
 import Error from "./pages/Error.jsx";
 import Editor from "./pages/Editor.jsx";
 import SignUp from "./pages/SignUp.jsx";
+import Profile from './pages/Profile.jsx';
 
 // CSS/Style Imports
 import './index.css';
@@ -32,6 +33,10 @@ const mainRouter = createBrowserRouter([
         path: '/edit',
         element: <Editor/>,
         errorElement: <Error/>
+    },
+    {
+        path: '/profile',
+        element: <Profile/>
     },
     {
         path: '/sign-up',
