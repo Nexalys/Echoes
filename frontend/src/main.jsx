@@ -26,17 +26,17 @@ const mainRouter = createBrowserRouter([
             {
                 path: '/',
                 element: <Home/>
-            }
+            },
+            {
+                path: '/profile',
+                element: <Profile/>
+            },
         ]
     },
     {
         path: '/edit',
         element: <Editor/>,
         errorElement: <Error/>
-    },
-    {
-        path: '/profile',
-        element: <Profile/>
     },
     {
         path: '/sign-up',

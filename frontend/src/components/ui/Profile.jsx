@@ -1,3 +1,13 @@
+export function Banner(props) {
+    const { src } = props;
+
+    return (
+        <div>
+            <img src={src} />
+        </div>
+    );
+}
+
 export function SampleAvatar( props ) {
     const src = '/public/Pin page image.jpg';
 
