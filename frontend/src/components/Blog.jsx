@@ -21,7 +21,7 @@ export function BlogListItem(props) {
 
     return (
         <div className='flex items-center gap-4 w-full group'>
-            <SampleAvatar className='h-12 w-12 rounded-full'/>
+            <SampleAvatar className='h-12 w-12 rounded-full' />
             <div className='flex-1 min-w-0 relative'>
                 <div className='flex items-center gap-2 text-sm text-gray-500'>
                     <span>{props.username || 'Username'}</span>
@@ -48,6 +48,18 @@ export function BlogListItem(props) {
     );
 }
 
+export function BlogAuthor() {
+    return (
+        <div className='flex gap-2 mt-auto'>
+            <SampleAvatar className='h-8 w-8 rounded-full' />
+            •
+            <span>Username</span>
+            •
+            <span>12 Jun 2024</span>
+        </div>
+    )
+}
+
 export function BlogList(props) {
     return (
         <div className='flex flex-col gap-10 items-center w-full'>
@@ -66,7 +78,7 @@ export function BlogCard(props) {
                 <h3 className='text-2xl font-bold'>
                     Blog Title Goes Here
                 </h3>
-                <HR/>
+                <HR />
                 <p className='h-[100px] overflow-ellipsis overflow-y-auto scroll-style'>
                     This is like a small portion of the blog. A trailer if you will. This is like a small portion of the
                     blog. A trailer if you will.
@@ -79,7 +91,7 @@ export function BlogCard(props) {
                     This is like a small portion of the blog. A trailer if you will.This is like a small portion of
                 </p>
                 <div className='flex gap-2 mt-auto'>
-                    <SampleAvatar className='h-8 w-8 rounded-full'/>
+                    <SampleAvatar className='h-8 w-8 rounded-full' />
                     •
                     <span>Username</span>
                     •
@@ -97,8 +109,8 @@ export function BlogCard(props) {
                 </div>
                 <div className='flex gap-4 items-center justify-center'>
                     <span className='bg-accent/30 px-5 py-2 rounded-full'>Subject</span>
-                    <Icon name='CircleMinus' className='hover:text-accent reg-transition text-xl'/>
-                    <Icon name='Bookmark' className='hover:text-accent reg-transition text-xl'/>
+                    <Icon name='CircleMinus' className='hover:text-accent reg-transition text-xl' />
+                    <Icon name='Bookmark' className='hover:text-accent reg-transition text-xl' />
                 </div>
             </div>
         </div>
