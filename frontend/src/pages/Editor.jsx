@@ -1,5 +1,6 @@
-import { useState, useCallback } from "react";
+import {useState, useCallback, useRef} from "react";
 
+import * as events from '@uiw/codemirror-extensions-events';
 import CodeMirror from '@uiw/react-codemirror';
 import { markdown, markdownLanguage } from '@codemirror/lang-markdown';
 import { languages } from '@codemirror/language-data';
@@ -191,10 +192,37 @@ export const theme = createTheme({
 
 export default function Editor() {
     const [value, setValue] = useState(markdownInstructions);
+    const [imgthing, setImgthing] = useState('');
+    const editorRef = useRef(null);
+    const editor = editorRef.current;
 
     const onChange = useCallback((val, viewUpdate) => {
         setValue(val);
     }, []);
+
+    const handlePaste = (event) => {
+        const clipboardItems = event.clipboardData.items;
+
+        for (let i = 0; i < clipboardItems.length; i++) {
+            const item = clipboardItems[i];
+
+            if (item.type.indexOf('image') !== -1) {
+                const file = item.getAsFile();
+                const reader = new FileReader();
+
+                reader.onload = (e) => {
+                    const imgUrl = e.target.result;
+                    const imageMarkdown = `![Pasted Image](${imgUrl})\r\n`;
+
+                    setValue(value + imageMarkdown)
+                    setImgthing(imgUrl);
+                };
+
+                reader.readAsDataURL(file);
+                event.preventDefault();  // Prevent default paste behavior for the image
+            }
+        }
+    };
 
     return (
         <section className='flex flex-col gap-10 p-5'>
@@ -211,6 +239,8 @@ export default function Editor() {
                         })]}
                         onChange={onChange}
                         theme={theme}
+                        onPaste={handlePaste}
+                        ref={editorRef}
                     />
                 </div>
                 <div className='w-[50%] markdown-preview-container'>

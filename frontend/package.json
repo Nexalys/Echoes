@@ -17,6 +17,7 @@
     "@codemirror/view": "^6.34.1",
     "@fsegurai/codemirror-theme-bundle": "^6.0.0",
     "@lezer/highlight": "^1.2.1",
+    "@uiw/codemirror-extensions-events": "^4.23.5",
     "@uiw/codemirror-themes": "^4.23.5",
     "@uiw/codemirror-themes-all": "^4.23.5",
     "@uiw/react-codemirror": "^4.23.5",

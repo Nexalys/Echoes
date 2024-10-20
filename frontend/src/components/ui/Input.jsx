@@ -15,19 +15,23 @@ export function SearchBar(props) {
 }
 
 export function DoubleBorderInput(props) {
-    const { placeholder, label, className } = props;
+    const { placeholder, label, className, error } = props;
 
     return (
         <div className='rounded-full border-[0.5px] border-accent box-border h-fit p-2 w-full relative'>
-            <span className='absolute top-[-0.9rem] left-[3rem] bg-background px-5 py-0'>
-                {label}
-            </span>
             <div className='rounded-full border-[0.5px] border-accent'>
                 <input
                     {...props}
-                    className={`py-3 bg-transparent focus:outline-none w-full transition-none px-4 ${className}`}
+                    className={`py-3 bg-transparent peer focus:outline-none w-full transition-none px-4 ${className}`}
                     placeholder={placeholder || label}
                 />
+                <span className='absolute top-[-0.5rem] left-[3rem] bg-background px-4 text-text/60
+                peer-focus:shadow-sub rounded-full peer-focus:text-text'>
+                    {label}
+                </span>
+                {error && <span className="absolute top-full right-[2rem] text-red-500">
+                    {error}
+                </span>}
             </div>
         </div>
     );

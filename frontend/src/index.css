@@ -30,14 +30,14 @@ h1, h2, h3, h4, h5, h6 {
     --accent: 2 91% 62%;
     --code-bg: 220 40% 50%;
 
-    --main-shadow: -5px -5px 10px 0px rgba(255, 255, 255, 0.70), 5px 5px 10px 0px rgba(30, 31, 40, 0.30);
-    --sub-shadow: -5px -5px 5px 0px rgba(255, 255, 255, 0.70), 5px 5px 5px 0px rgba(30, 31, 40, 0.30);
+    --main-shadow: -5px -5px 5px 0px rgba(255, 255, 255, 0.70), 5px 5px 5px 0px rgba(30, 31, 40, 0.30);
+    --sub-shadow: -2px -2px 5px 0px rgba(255, 255, 255, 0.70), 2px 2px 5px 0px rgba(30, 31, 40, 0.30);
 }
 
 :root[data-theme="dark"] {
     --text: 201 100% 97%;
     --background: 234 14% 14%;
-    --primary: 	223 19% 71%;
+    --primary: 	223 70% 50%;
     --secondary: 274 19% 35%;
     --accent: 344 71% 59%;
     --code-bg: 235 11% 40%;
@@ -45,8 +45,8 @@ h1, h2, h3, h4, h5, h6 {
     /*This is just to save an old shadow config I don't want to lose*/
     --save: -5px -5px 12px 0px rgba(161, 166, 207, 0.10), 5px 5px 12px 0px rgba(0, 0, 0, 0.55);
 
-    --main-shadow: 2px 2px 2px 0px rgba(216, 224, 253, 0.05) inset, -2px -2px 2px 0px rgba(0, 0, 0, 0.25) inset, -5px -5px 10px 0px rgba(161, 166, 207, 0.05), 5px 5px 5px 0px rgba(8, 10, 17, 0.25);
-    --sub-shadow: 5px 5px 10px rgba(0, 0, 0, 0.55), -5px -5px 10px rgba(161, 166, 207, 0.15);
+    --main-shadow: 2px 2px 2px 0px rgba(216, 224, 253, 0.2) inset, -2px -2px 2px 0px rgba(0, 0, 0, 0.45) inset, -5px -5px 5px 0px rgba(161, 166, 207, 0.1), 5px 5px 5px 0px rgba(8, 10, 17, 0.45);
+    --sub-shadow: 1.5px 1.5px 2px 0px rgba(216, 224, 253, 0.1) inset, -2px -2px 2px 0px rgba(0, 0, 0, 0.45) inset, -5px -5px 10px 0px rgba(161, 166, 207, 0.05), 5px 5px 5px 0px rgba(8, 10, 17, 0.25);
 }
 
 .reg-transition {
@@ -55,6 +55,10 @@ h1, h2, h3, h4, h5, h6 {
 
 * {
     @apply reg-transition;
+}
+
+input {
+    @apply transition-none;
 }
 
 .filter-list {

@@ -5,6 +5,8 @@ import { UIModeToggle } from "./UIModeToggle.jsx";
 import { Link } from "react-router-dom";
 import { Dropdown, DropdownSeperator, Option, OptionGroup } from "./ui/Dropdown.jsx";
 import { useState } from "react";
+import {Button} from "./ui/Button.jsx";
+import {ToggleGroup, ToggleOption} from "./ui/ToggleGroup.jsx";
 
 export function Navbar() {
     return (
@@ -66,6 +68,17 @@ export function EditorNav() {
                     })
                     }
                 </Dropdown>
+                <ToggleGroup>
+                    <ToggleOption>
+                        <Icon name='Bold'/>
+                    </ToggleOption>
+                    <ToggleOption>
+                        <Icon name='Italic'/>
+                    </ToggleOption>
+                    <ToggleOption>
+                        <Icon name='Underline'/>
+                    </ToggleOption>
+                </ToggleGroup>
             </div>
             <UIModeToggle className='ml-auto'/>
         </nav>

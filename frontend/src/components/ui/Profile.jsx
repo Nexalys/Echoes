@@ -2,9 +2,11 @@ export function Banner(props) {
     const { src } = props;
 
     return (
-        <div>
-            <img src={src} />
-        </div>
+        <img
+            src={src}
+            alt={'Banner Image'}
+            className='w-full h-full object-cover object-center z-[-1]'
+        />
     );
 }
 

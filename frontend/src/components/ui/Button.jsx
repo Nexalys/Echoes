@@ -22,7 +22,7 @@ export function Button(props) {
     }
 
     return (
-        <button {...props} className={style + ' px-5 py-3 rounded-full reg-transition ' + className}>
+        <button {...props} className={style + ' px-5 py-2 rounded-full reg-transition ' + className}>
             {children}
         </button>
     );
