@@ -54,7 +54,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 * {
-    @apply reg-transition;
+    transition-duration: 300ms;
+    transition-property: background-color;
+    transition-timing-function: ease-in-out;
 }
 
 input {
