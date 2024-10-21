@@ -13,6 +13,8 @@ import Error from "./pages/Error.jsx";
 import Editor from "./pages/Editor.jsx";
 import SignUp from "./pages/SignUp.jsx";
 import Profile from './pages/Profile.jsx';
+import SignIn from './pages/SignIn.jsx';
+import Blog from './pages/Blog.jsx';
 
 // CSS/Style Imports
 import './index.css';
@@ -31,6 +33,10 @@ const mainRouter = createBrowserRouter([
                 path: '/profile',
                 element: <Profile/>
             },
+            {
+                path: '/Blog',
+                element: <Blog/>
+            },
         ]
     },
     {
@@ -41,6 +47,11 @@ const mainRouter = createBrowserRouter([
     {
         path: '/sign-up',
         element: <SignUp/>,
+        errorElement: <Error/>
+    },
+    {
+        path: '/sign-in',
+        element: <SignIn/>,
         errorElement: <Error/>
     },
 ]);
