@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef} from "react";
 
 import { Icon } from "../components/ui/Icon";
 import { HR } from "../components/ui/Line";
-import { BlogCard, BlogListItem, BlogAuthor, BlogList } from "../components/Blog";
+import { BlogCard, BlogCardSmall} from "../components/Blog";
 import { SampleAvatar } from "../components/ui/Profile";
 import { Tooltip, TooltipWrapper } from "../components/ui/Tooltip";
 import MarkdownPreview from '@uiw/react-markdown-preview';
@@ -10,16 +10,50 @@ import { useTheme } from "next-themes";
 
 export default function Blog({titles = ["Main Title", "Main Title", "Main Title", "Main Title", "Main Title"]}) {
     const [selected, setSelected] = useState(0)
+
+    const [y, setY] = useState(0);
+    const [totalY, setTotalY] = useState(0);
+    const [scrollBarHeight, setScrollBarHeight] = useState('0%');
+
+    const blogContentRef = useRef(null); 
+
+    useEffect(() => {
+        const blogContent = blogContentRef.current;
+    
+        const handleScroll = () => {
+            const scrollTop = blogContent.scrollTop;
+            const clientHeight = blogContent.clientHeight;
+            const scrollHeight = blogContent.scrollHeight;
+    
+            if (scrollHeight <= clientHeight) {
+                setScrollBarHeight('100%');
+            } else {
+                const totalScrollableHeight = scrollHeight - clientHeight;
+                const scrollPercentage = (scrollTop / totalScrollableHeight) * 100;
+                setScrollBarHeight(`${Math.max(scrollPercentage, 0.1)}%`);
+            }
+        };
+    
+        blogContent.addEventListener('scroll', handleScroll);
+        
+        handleScroll();
+    
+        return () => {
+            blogContent.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+    
+
     return (
         <div>
-            <div className="w-[100%] h-[3px]">
-                <div className="bg-accent w-[60%] h-[100%]">
+            <div className="flex rounded-2xl items-center w-[100%] h-[30px] sticky top-4 z-10">
+                <div className='bg-accent h-[3px]' style={{ width: scrollBarHeight }}>
                 </div>
             </div>
 
-            <section className="shadow-main rounded-2xl p-[10px] mt-[50px] flex flex-row justify-start gap-[4%]">
+            <section className="shadow-main rounded-2xl p-8 mt-[20px] flex flex-row justify-start gap-[4%]">
 
-                <div className="flex place-content-center shadow-main rounded-2xl h-fit w-[82%] mb-10">
+                <div ref ={blogContentRef} className="blog-content flex place-content-center shadow-main rounded-2xl h-fit w-[82%] mb-10  max-h-[1589px] overflow-scroll">
                     <div className="w-[90%] h-fit">
 
                         <div className="flex mt-[100px] justify-between items-start ">
@@ -65,9 +99,9 @@ export default function Blog({titles = ["Main Title", "Main Title", "Main Title"
                         </div>
 
                         <MarkdownPreview
-                            source="### Hello this is markdown text hello this is another line"
-
-
+                            source="### Hello this is markdown text
+                             hello this is another line
+                             "
                             className='rounded-xl py-[10px] h-full bg-background text-text mb-20'
                             wrapperElement={{
                                 "data-color-mode": useTheme().resolvedTheme
@@ -76,37 +110,38 @@ export default function Blog({titles = ["Main Title", "Main Title", "Main Title"
                     </div>
                 </div>
 
-                <div className=" flex flex-col gap-7 py-10 w-[14%] pr-5 mr-5 justify-center items-start h-fit shadow-main rounded-2xl  border-accent ">
+                <div className="sticky top-5 bottom-5 flex flex-col gap-4 py-10 w-[14%] pr-5 mr-0 justify-center items-start h-fit shadow-main rounded-2xl  border-l-2 border-accent ">
                     {titles.map((title, index) => (
-                        <div className="h-fit flex flex-row gap-1 items-center">
-                            {selected == index+1 ? <div className=" h-[40px] w-[6px] bg-accent"></div>: <div></div>}
-                            <a key={index} href="#" className={`ml-5 underline text-xl transition-reg ${selected == index+1 ? 'text-accent': 'text'}`} onClick={() => setSelected(index + 1)}>
+                        <div className="h-[50px] flex flex-row gap-1 items-center">
+                            {selected == index+1 ? <div className=" h-full w-[4.5px] bg-accent"></div> : <div></div>}
+                            <a key={index} href="#" className={`ml-5 underline text-xl reg-transition ${selected == index+1 ? 'text-accent': 'text'}`} onClick={() => setSelected(index + 1)}>
                                 {title}
                             </a>
                         </div>
                     ))}
                 </div>
+
             </section>
 
 
 
             <section className="mt-[50px] p-10 shadow-main rounded-2xl grid-cols-2">
-                <h1 className="text-4xl py-10">More from <span className="text-accent text-5xl">Username</span></h1>
+                <h1 className="text-4xl py-10">More from <span className="text-gradient text-5xl font-bold">Username</span></h1>
                 <div className="grid grid-cols-2 gap-x-[40px] gap-y-[15px] h-[500px] overflow-scroll">
-                    <BlogCard/>
-                    <BlogCard/>
-                    <BlogCard/>
-                    <BlogCard/>
+                    <BlogCardSmall className=""/>
+                    <BlogCardSmall className=""/>
+                    <BlogCardSmall className=""/>
+                    <BlogCardSmall className=""/>
                 </div>
             </section>
 
             <section className="mt-[50px] p-10 shadow-main rounded-2xl grid-cols-2">
-                <h1 className="text-4xl py-10">More on <span className="text-accent text-5xl">This Topic</span></h1>
+                <h1 className="text-4xl py-10">More on <span className="text-gradient text-5xl font-bold">This Topic</span></h1>
                 <div className="grid grid-cols-2 gap-x-[40px] gap-y-[15px]  h-[500px] overflow-scroll">
-                    <BlogCard/>
-                    <BlogCard/>
-                    <BlogCard/>
-                    <BlogCard/>
+                    <BlogCardSmall className=""/>
+                    <BlogCardSmall className=""/>
+                    <BlogCardSmall className=""/>
+                    <BlogCardSmall className=""/>
                 </div>
             </section>
         </div>

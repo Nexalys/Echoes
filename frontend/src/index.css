@@ -165,3 +165,10 @@ input {
 .editor * {
     transition: none 0s !important;
 }
+
+.text-gradient {
+    background: linear-gradient(92deg, #9571B1 40.52%, #E14C73 103%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

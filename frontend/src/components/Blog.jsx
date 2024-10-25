@@ -73,7 +73,7 @@ export function BlogList(props) {
 
 export function BlogCard(props) {
     return (
-        <div className="p-10 rounded-xl border-[0.5px] gap-[50px] border-accent shadow-main flex h-[350px]">
+        <div className={`p-10 rounded-xl border-[0.5px] gap-[50px] border-accent shadow-main flex h-[350px] ${props.className || ''}`}>
             <div className='flex flex-col gap-6'>
                 <h3 className='text-2xl font-bold'>
                     Blog Title Goes Here
@@ -101,6 +101,53 @@ export function BlogCard(props) {
             <div className='flex flex-col justify-between'>
                 <div
                     className='w-[200px] aspect-square border-accent border-4 rounded-full p-2'
+                >
+                    <img
+                        src='/public/SampleBlogImage.png'
+                        className='rounded-full aspect-square object-cover h-full w-full'
+                    />
+                </div>
+                <div className='flex gap-4 items-center justify-center'>
+                    <span className='bg-accent/30 px-5 py-2 rounded-full'>Subject</span>
+                    <Icon name='CircleMinus' className='hover:text-accent reg-transition text-xl' />
+                    <Icon name='Bookmark' className='hover:text-accent reg-transition text-xl' />
+                </div>
+            </div>
+        </div>
+
+    );
+}
+
+export function BlogCardSmall(props) {
+    return (
+        <div className={`p-8 rounded-xl border-[0.5px] gap-[50px] border-accent shadow-main flex h-[300px] ${props.className || ''}`}>
+            <div className='flex flex-col gap-6'>
+                <h3 className='text-2xl font-bold'>
+                    Blog Title Goes Here
+                </h3>
+                <HR />
+                <p className='h-[80px] overflow-ellipsis overflow-y-auto scroll-style'>
+                    This is like a small portion of the blog. A trailer if you will. This is like a small portion of the
+                    blog. A trailer if you will.
+                    This is like a small portion of the blog. A trailer if you will.This is like a small portion of...
+                    This is like a small portion of the blog. A trailer if you will. This is like a small portion of the
+                    blog. A trailer if you will.
+                    This is like a small portion of the blog. A trailer if you will.This is like a small portion of...
+                    This is like a small portion of the blog. A trailer if you will. This is like a small portion of the
+                    blog. A trailer if you will.
+                    This is like a small portion of the blog. A trailer if you will.This is like a small portion of
+                </p>
+                <div className='flex gap-2 mt-auto'>
+                    <SampleAvatar className='h-8 w-8 rounded-full' />
+                    •
+                    <span>Username</span>
+                    •
+                    <span>12 Jun 2024</span>
+                </div>
+            </div>
+            <div className='items-center flex flex-col justify-between'>
+                <div
+                    className='w-[160px] self-center aspect-square border-accent border-4 rounded-full p-2'
                 >
                     <img
                         src='/public/SampleBlogImage.png'
