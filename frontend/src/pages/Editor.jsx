@@ -241,6 +241,9 @@ export default function Editor() {
                         theme={theme}
                         onPaste={handlePaste}
                         ref={editorRef}
+                        optons={{
+                            spellcheck: true,
+                        }}
                     />
                 </div>
                 <div className='w-[50%] markdown-preview-container'>
