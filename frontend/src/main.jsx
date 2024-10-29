@@ -22,37 +22,37 @@ import './index.css';
 const mainRouter = createBrowserRouter([
     {
         path: '/',
-        element: <Root/>,
-        errorElement: <Error/>,
-        children : [
+        element: <Root />,
+        errorElement: <Error />,
+        children: [
             {
                 path: '/',
-                element: <Home/>
+                element: <Home />
             },
             {
                 path: '/profile',
-                element: <Profile/>
+                element: <Profile />
             },
             {
                 path: '/Blog',
-                element: <Blog/>
+                element: <Blog />
             },
         ]
     },
     {
         path: '/edit',
-        element: <Editor/>,
-        errorElement: <Error/>
+        element: <Editor />,
+        errorElement: <Error />
     },
     {
         path: '/sign-up',
-        element: <SignUp/>,
-        errorElement: <Error/>
+        element: <SignUp />,
+        errorElement: <Error />
     },
     {
         path: '/sign-in',
-        element: <SignIn/>,
-        errorElement: <Error/>
+        element: <SignIn />,
+        errorElement: <Error />
     },
 ]);
 
@@ -60,9 +60,9 @@ createRoot(document.getElementById('root')).render(
     <StrictMode>
         <ThemeProvider
             attribute="data-theme"
-            defaultTheme="dark"
+            defaultTheme="dark_off"
         >
-            <RouterProvider router={mainRouter}/>
+            <RouterProvider router={mainRouter} />
         </ThemeProvider>
     </StrictMode>
 );
