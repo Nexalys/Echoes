@@ -149,29 +149,17 @@ export default function Blog() {
 
     useEffect(() => {
         const headerElements = headerInfo.map(({ link }) => {
-            if (/^[0-9]+/.test(link.slice(1))) {
-                link = `#\\${link.charCodeAt(1).toString(16)}\\ ${link.slice(2)}`;
-                console.log(link);
-            }
+            return document.getElementById(link.slice(1));
+        }).filter(Boolean);
 
-            // Select the header element using the modified link
-            return document.querySelector(link);
-        }).filter(Boolean); // Filter out any null values
-
-        console.log(headerElements);
-
-        // Set up observers for each header element
         const observers = headerElements.map(headerElement => {
-            return observeHeader(headerElement, (id) => {
-                setCurrentLink(id);
-            });
+            return observeHeader(headerElement, (id) => setCurrentLink(id));
         });
 
-        // Cleanup function to disconnect observers
         return () => {
             observers.forEach(observer => observer.disconnect());
         };
-    }, [headerInfo]);
+    }, []);
 
     return (
         <section>
