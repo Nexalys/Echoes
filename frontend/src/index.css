@@ -9,12 +9,17 @@
 :root {
     font-family: 'Lato', sans-serif;
 
-    --dual-mask: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%,#FFF 10%, #FFF 50%, #FFF 90%, rgba(255, 255, 255, 0.00) 100%);
+    --dual-mask: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%, #FFF 10%, #FFF 50%, #FFF 90%, rgba(255, 255, 255, 0.00) 100%);
     --left-mask: linear-gradient(90deg, rgba(255, 255, 255) 100%, rgba(255, 255, 255, 0.00) 0%);
     --right-mask: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Poppins', sans-serif;
 }
 
@@ -22,22 +27,40 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
 }
 
-:root[data-theme="light"] {
+:root[data-theme="light_on"] {
     --text: 227 90% 8%;
     --background: 198 16% 87%;
-    --primary: 	230 91% 53%;
+    --primary: 230 91% 53%;
     --secondary: 332 90% 72%;
     --accent: 2 91% 62%;
     --code-bg: 220 40% 50%;
 
     --main-shadow: -5px -5px 5px 0px rgba(255, 255, 255, 0.70), 5px 5px 5px 0px rgba(30, 31, 40, 0.30);
     --sub-shadow: -2px -2px 5px 0px rgba(255, 255, 255, 0.70), 2px 2px 5px 0px rgba(30, 31, 40, 0.30);
+
+    --border: None;
+    --border-width: 0px;
 }
 
-:root[data-theme="dark"] {
+:root[data-theme="light_off"] {
+    --text: 227 90% 8%;
+    --background: 198 16% 87%;
+    --primary: 230 91% 53%;
+    --secondary: 332 90% 72%;
+    --accent: 2 91% 62%;
+    --code-bg: 220 40% 50%;
+
+    --main-shadow: None;
+    --sub-shadow: None;
+
+    --border: 1px solid hsl(var(--accent));
+    --border-width: 1px;
+}
+
+:root[data-theme="dark_on"] {
     --text: 201 100% 97%;
     --background: 234 14% 14%;
-    --primary: 	223 70% 50%;
+    --primary: 223 70% 50%;
     --secondary: 274 19% 35%;
     --accent: 344 71% 59%;
     --code-bg: 235 11% 40%;
@@ -47,6 +70,27 @@ h1, h2, h3, h4, h5, h6 {
 
     --main-shadow: 2px 2px 2px 0px rgba(216, 224, 253, 0.2) inset, -2px -2px 2px 0px rgba(0, 0, 0, 0.45) inset, -5px -5px 5px 0px rgba(161, 166, 207, 0.1), 5px 5px 5px 0px rgba(8, 10, 17, 0.45);
     --sub-shadow: 1.5px 1.5px 2px 0px rgba(216, 224, 253, 0.1) inset, -2px -2px 2px 0px rgba(0, 0, 0, 0.45) inset, -5px -5px 10px 0px rgba(161, 166, 207, 0.05), 5px 5px 5px 0px rgba(8, 10, 17, 0.25);
+
+    --border: None;
+    --border-width: 0px;
+}
+
+:root[data-theme="dark_off"] {
+    --text: 201 100% 97%;
+    --background: 234 14% 14%;
+    --primary: 223 70% 50%;
+    --secondary: 274 19% 35%;
+    --accent: 344 71% 59%;
+    --code-bg: 235 11% 40%;
+
+    /*This is just to save an old shadow config I don't want to lose*/
+    --save: -5px -5px 12px 0px rgba(161, 166, 207, 0.10), 5px 5px 12px 0px rgba(0, 0, 0, 0.55);
+
+    --main-shadow: None;
+    --sub-shadow: None;
+
+    --border: 1px solid rgba(161, 166, 207, 0.10);
+    --border-width: 1px;
 }
 
 .reg-transition {
@@ -153,7 +197,7 @@ input {
     outline: none !important;
 }
 
-.markdown-preview-container > .wmde-markdown {
+.markdown-preview-container>.wmde-markdown {
     scroll-behavior: smooth;
 }
 
