@@ -54,7 +54,7 @@ h6 {
     --sub-shadow: None;
 
     --border: 1px solid hsl(var(--accent));
-    --border-width: 1px;
+    --border-width: 1px ;
 }
 
 :root[data-theme="dark_on"] {

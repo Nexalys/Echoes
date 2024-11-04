@@ -1,3 +1,4 @@
+import React from "react";
 import { Icon } from "./Icon.jsx";
 
 export function SearchBar(props) {
@@ -14,7 +15,7 @@ export function SearchBar(props) {
     );
 }
 
-export function DoubleBorderInput(props) {
+export const DoubleBorderInput = React.forwardRef((props, ref) => {
     const { placeholder, label, className, error } = props;
 
     return (
@@ -22,8 +23,12 @@ export function DoubleBorderInput(props) {
             <div className='rounded-full border-[0.5px] border-accent'>
                 <input
                     {...props}
+                    ref={ref} // Attach ref here for React Hook Form compatibility
                     className={`py-3 bg-transparent peer focus:outline-none w-full transition-none px-4 ${className}`}
                     placeholder={placeholder || label}
+                    style={{
+                        borderRadius: '9999px', // Rounded border for autofill as well
+                    }}
                 />
                 <span className='absolute top-[-0.5rem] left-[3rem] bg-background px-4 text-text/60
                 peer-focus:shadow-sub rounded-full peer-focus:text-text'>
@@ -35,4 +40,4 @@ export function DoubleBorderInput(props) {
             </div>
         </div>
     );
-}
+});

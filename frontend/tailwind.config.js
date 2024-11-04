@@ -24,9 +24,9 @@ export default {
         xl: "15px",
         "2xl": "20px",
       },
-      // borderWidth: {
-      //   main: "var(--border-width, 1px)",
-      // },
+      borderWidth: {
+        main: "var(--border-width, 1px)",
+      },
       borderColor: {
         main: "var(--border)",
       },
